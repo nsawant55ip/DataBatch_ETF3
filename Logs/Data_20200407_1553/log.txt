@@ -1,0 +1,46 @@
+
+ Data Batch Log File
+
+ Script initiated Tuesday 04/07/2020 15:53:07 on machine DESKTOP-I4SEQF3 logged in as Admin
+
+ Batch info will be written to C:\DataBatch_ETF_NewProject\Logs\Data_20200407_1553.
+ Running Main Batch.
+ Running Compustat Segments.
+ Running Update Betas.
+ Running Daily Pricing.
+
+ C:\DataBatch_ETF_NewProject\Flags\CompleteFlag.txt not found.
+
+ 15:53:07 Commencing parsing of batch configuration file.
+ Batch configuration file successfully parsed.
+
+ 15:53:07 All network drive locations successfully accessed.
+
+ 15:53:07 All files in C:\DataBatch_ETF_NewProject\Output deleted.
+
+ 15:53:07 Delete any existing subsection flags:
+  C:\DataBatch_ETF_NewProject\Flags\Bbg_fx_carry_flag.txt not found, deletion skipped.
+
+ Processes Scheduled:
+ DEFAULT - 2020-04-07 15:53:07
+ Bbg_fx_carry - 2020-04-07 15:53:07
+
+ 15:53:07 Commencing process launching...
+
+ 15:53:08 Launching Download FX carry data from bloomberg...
+ Command: "python" "C:\DataBatch_ETF_NewProject\Code\bbg_fx_carry.py" 
+
+ 15:53:14 Download FX carry data from bloomberg Process Finished: 
+ No errors detected.
+ C:\DataBatch_ETF_NewProject\Flags\Bbg_fx_carry_flag.txt written.
+
+ 15:53:14 Last of the data batch processes finished.
+
+ 15:53:14 C:\DataBatch_ETF_NewProject\Flags\completeflag.txt written.
+
+ 16:13:21 Commencing Zipping...
+ Command: "c:\Program Files\7-Zip\7z.exe" a "C:\DataBatch_ETF_NewProject\archives\Output_Data_20200407_1553.7z" C:\DataBatch_ETF_NewProject\Output\*.*"
+
+ 16:13:21 Zipping finished successfully.
+
+ 16:13:21 ETF Data Batch Script finished.

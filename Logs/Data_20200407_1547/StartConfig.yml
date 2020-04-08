@@ -1,0 +1,28 @@
+Bbg_fx_carry:
+  Archive: None
+  ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
+  BatchSection: MainBatch
+  DisplayName: Download FX carry data from bloomberg
+  EarliestStart: 01:10:00
+  FileToCheck: None
+  LocalizeIn: query
+  LocalizeOut: output
+  LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\fx_etf_carry_update.csv
+  MaxTime: 00:10:00
+  formatting: None
+  method: Python
+  output: C:\DataBatch_ETF_NewProject\Output\fx_etf_carry_update.csv
+  parameter: null
+  query: C:\DataBatch_ETF_NewProject\Code\bbg_fx_carry.py
+  wait: false
+DEFAULT:
+  Archive: None
+  AttemptNumber: 0
+  Dependents: None
+  FileToCheck: None
+  HardDrive: false
+  LocalizeIn: None
+  LocalizeOut: None
+  LocalizeOutDest: None
+  Requires: None
+  Wait: false

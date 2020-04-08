@@ -1,0 +1,6 @@
+Tuesday 04/07/2020 15:47 CompleteFlag.txt not found.
+Tuesday 04/07/2020 15:47 Bbg_fx_carry_flag.txt not found, deletion skipped.
+Tuesday 04/07/2020 15:53 CompleteFlag.txt not found.
+Tuesday 04/07/2020 15:53 Bbg_fx_carry_flag.txt not found, deletion skipped.
+Tuesday 04/07/2020 15:53 Bbg_fx_carry_flag.txt written.
+Tuesday 04/07/2020 15:53 CompleteFlag.txt written.

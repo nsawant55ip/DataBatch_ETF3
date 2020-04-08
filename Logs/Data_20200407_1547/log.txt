@@ -1,0 +1,29 @@
+
+ Data Batch Log File
+
+ Script initiated Tuesday 04/07/2020 15:47:44 on machine DESKTOP-I4SEQF3 logged in as Admin
+
+ Batch info will be written to C:\DataBatch_ETF_NewProject\Logs\Data_20200407_1547.
+ Running Main Batch.
+ Running Compustat Segments.
+ Running Update Betas.
+ Running Daily Pricing.
+
+ C:\DataBatch_ETF_NewProject\Flags\CompleteFlag.txt not found.
+
+ 15:47:45 Commencing parsing of batch configuration file.
+ Batch configuration file successfully parsed.
+
+ 15:47:45 All network drive locations successfully accessed.
+
+ 15:47:45 All files in C:\DataBatch_ETF_NewProject\Output deleted.
+
+ 15:47:45 Delete any existing subsection flags:
+  C:\DataBatch_ETF_NewProject\Flags\Bbg_fx_carry_flag.txt not found, deletion skipped.
+
+ Processes Scheduled:
+ DEFAULT - 2020-04-07 15:47:45
+ Bbg_fx_carry - 2020-04-07 15:47:45
+
+ 15:47:45 Commencing process launching...
+
