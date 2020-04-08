@@ -1,0 +1,563 @@
+Ticker,Country,Desc
+WBNGITA Index,Italy,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLITAL Index,Italy,World Bank Total Gross External Debt USD
+FDINITA Index,Italy,World Bank FDI Net Inflows % GDP
+WRGDITAL Index,Italy,World Bank GDP Constant 2010 Prices USD
+BPCGITA Index,Italy,World Bank Domestic Private Sector Credit to GDP
+HELDITDS Index,Italy,World Bank Total Short Term Debt
+HELDITLD Index,Italy,World Bank Total Long Term Debt
+WDBAITAL Index,Italy,World Bank Banks' Debt USD
+WDBTITAL Index,Italy,World Bank Gross External Debt Position
+FDNOITA Index,Italy,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBBGITAL Index,Italy,World Bank Budget Balance % of GDP
+WBEGITA Index,Italy,World Bank Export Good/Service % of GDP
+WBIGITA Index,Italy,World Bank Import Good/Service % of GDP
+WBPIITA Index,Italy,World Bank CPI (2010 Base 100)
+EHUPITY Index,Italy,Unemployment Rate (%)
+WBNGPRT Index,Portugal,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLPORT Index,Portugal,World Bank Total Gross External Debt USD
+FDINPRT Index,Portugal,World Bank FDI Net Inflows % GDP
+WRGDPORT Index,Portugal,World Bank GDP Constant 2010 Prices USD
+BPCGPRT Index,Portugal,World Bank Domestic Private Sector Credit to GDP
+HELDPTDS Index,Portugal,World Bank Total Short Term Debt
+HELDPTLD Index,Portugal,World Bank Total Long Term Debt
+WDBAPORT Index,Portugal,World Bank Banks' Debt USD
+WDBTPORT Index,Portugal,World Bank Gross External Debt Position
+FDNOPRT Index,Portugal,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBBGPORT Index,Portugal,World Bank Budget Balance % of GDP
+WBEGPRT Index,Portugal,World Bank Export Good/Service % of GDP
+WBIGPRT Index,Portugal,World Bank Import Good/Service % of GDP
+WBPIPRT Index,Portugal,World Bank CPI (2010 Base 100)
+EHUPPT Index,Portugal,Unemployment Rate (%)
+WBNGNOR Index,Norway,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLNORW Index,Norway,World Bank Total Gross External Debt USD
+FDINNOR Index,Norway,World Bank FDI Net Inflows % GDP
+WRGDNORW Index,Norway,World Bank GDP Constant 2010 Prices USD
+BPCGNOR Index,Norway,World Bank Domestic Private Sector Credit to GDP
+HELDNODS Index,Norway,World Bank Total Short Term Debt
+HELDNOLD Index,Norway,World Bank Total Long Term Debt
+WDBANORW Index,Norway,World Bank Banks' Debt USD
+WDBTNORW Index,Norway,World Bank Gross External Debt Position
+FDNONOR Index,Norway,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBBGNORW Index,Norway,World Bank Budget Balance % of GDP
+WBEGNOR Index,Norway,World Bank Export Good/Service % of GDP
+WBIGNOR Index,Norway,World Bank Import Good/Service % of GDP
+WBPINOR Index,Norway,World Bank CPI (2010 Base 100)
+EHUPNO Index,Norway,Unemployment Rate (%)
+WBNGBEL Index,Belgium,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLBELG Index,Belgium,World Bank Total Gross External Debt USD
+FDINBEL Index,Belgium,World Bank FDI Net Inflows % GDP
+WRGDBELG Index,Belgium,World Bank GDP Constant 2010 Prices USD
+BPCGBEL Index,Belgium,World Bank Domestic Private Sector Credit to GDP
+HELDBEDS Index,Belgium,World Bank Total Short Term Debt
+HELDBELD Index,Belgium,World Bank Total Long Term Debt
+WDBABELG Index,Belgium,World Bank Banks' Debt USD
+WDBTBELG Index,Belgium,World Bank Gross External Debt Position
+FDNOBEL Index,Belgium,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBBGBELG Index,Belgium,World Bank Budget Balance % of GDP
+WBEGBEL Index,Belgium,World Bank Export Good/Service % of GDP
+WBIGBEL Index,Belgium,World Bank Import Good/Service % of GDP
+WBPIBEL Index,Belgium,World Bank CPI (2010 Base 100)
+EHUPBE Index,Belgium,Unemployment Rate (%)
+WBNGISR Index,Israel,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLISRA Index,Israel,World Bank Total Gross External Debt USD
+FDINISR Index,Israel,World Bank FDI Net Inflows % GDP
+WRGDISRA Index,Israel,World Bank GDP Constant 2010 Prices USD
+BPCGISR Index,Israel,World Bank Domestic Private Sector Credit to GDP
+HELDILDS Index,Israel,World Bank Total Short Term Debt
+HELDILLD Index,Israel,World Bank Total Long Term Debt
+WDBAISRA Index,Israel,World Bank Banks' Debt USD
+WDBTISRA Index,Israel,World Bank Gross External Debt Position
+FDNOISR Index,Israel,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBBGISRA Index,Israel,World Bank Budget Balance % of GDP
+WBEGISR Index,Israel,World Bank Export Good/Service % of GDP
+WBIGISR Index,Israel,World Bank Import Good/Service % of GDP
+WBPIISR Index,Israel,World Bank CPI (2010 Base 100)
+EHUPIL Index,Israel,Unemployment Rate (%)
+WBNGSWE Index,Sweden,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLSWED Index,Sweden,World Bank Total Gross External Debt USD
+FDINSWE Index,Sweden,World Bank FDI Net Inflows % GDP
+WRGDSWED Index,Sweden,World Bank GDP Constant 2010 Prices USD
+BPCGSWE Index,Sweden,World Bank Domestic Private Sector Credit to GDP
+HELDSEDS Index,Sweden,World Bank Total Short Term Debt
+HELDSELD Index,Sweden,World Bank Total Long Term Debt
+WDBASWED Index,Sweden,World Bank Banks' Debt USD
+WDBTSWED Index,Sweden,World Bank Gross External Debt Position
+FDNOSWE Index,Sweden,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBBGSWED Index,Sweden,World Bank Budget Balance % of GDP
+WBEGSWE Index,Sweden,World Bank Export Good/Service % of GDP
+WBIGSWE Index,Sweden,World Bank Import Good/Service % of GDP
+WBPISWE Index,Sweden,World Bank CPI (2010 Base 100)
+EHUPSE Index,Sweden,Unemployment Rate (%)
+BLTLWNZL Index,New Zealand,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLNEWZ Index,New Zealand,World Bank Total Gross External Debt USD
+FDINNZL Index,New Zealand,World Bank FDI Net Inflows % GDP
+WRGDNEWZ Index,New Zealand,World Bank GDP Constant 2010 Prices USD
+BPCGNZL Index,New Zealand,World Bank Domestic Private Sector Credit to GDP
+HELDNZDS Index,New Zealand,World Bank Total Short Term Debt
+HELDNZLD Index,New Zealand,World Bank Total Long Term Debt
+WBNGIRL Index,Ireland,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLIREL Index,Ireland,World Bank Total Gross External Debt USD
+FDINIRL Index,Ireland,World Bank FDI Net Inflows % GDP
+WRGDIREL Index,Ireland,World Bank GDP Constant 2010 Prices USD
+BPCGIRL Index,Ireland,World Bank Domestic Private Sector Credit to GDP
+HELDIEDS Index,Ireland,World Bank Total Short Term Debt
+HELDIELD Index,Ireland,World Bank Total Long Term Debt
+WDBAIREL Index,Ireland,World Bank Banks' Debt USD
+WDBTIREL Index,Ireland,World Bank Gross External Debt Position
+FDNOIRL Index,Ireland,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBBGIREL Index,Ireland,World Bank Budget Balance % of GDP
+WBEGIRL Index,Ireland,World Bank Export Good/Service % of GDP
+WBIGIRL Index,Ireland,World Bank Import Good/Service % of GDP
+WBPIIRL Index,Ireland,World Bank CPI (2010 Base 100)
+EHUPIE Index,Ireland,Unemployment Rate (%)
+WBNGFIN Index,Finland,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLFINL Index,Finland,World Bank Total Gross External Debt USD
+FDINFIN Index,Finland,World Bank FDI Net Inflows % GDP
+WRGDFINL Index,Finland,World Bank GDP Constant 2010 Prices USD
+BPCGFIN Index,Finland,World Bank Domestic Private Sector Credit to GDP
+HELDFIDS Index,Finland,World Bank Total Short Term Debt
+HELDFILD Index,Finland,World Bank Total Long Term Debt
+WDBAFINL Index,Finland,World Bank Banks' Debt USD
+WDBTFINL Index,Finland,World Bank Gross External Debt Position
+FDNOFIN Index,Finland,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBEGFIN Index,Finland,World Bank Export Good/Service % of GDP
+WBIGFIN Index,Finland,World Bank Import Good/Service % of GDP
+WBPIFIN Index,Finland,World Bank CPI (2010 Base 100)
+EHUPFI Index,Finland,Unemployment Rate (%)
+WBNGDNK Index,Denmark,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLDENM Index,Denmark,World Bank Total Gross External Debt USD
+FDINDNK Index,Denmark,World Bank FDI Net Inflows % GDP
+WRGDDENM Index,Denmark,World Bank GDP Constant 2010 Prices USD
+BPCGDNK Index,Denmark,World Bank Domestic Private Sector Credit to GDP
+HELDDKDS Index,Denmark,World Bank Total Short Term Debt
+HELDDKLD Index,Denmark,World Bank Total Long Term Debt
+WDBADENM Index,Denmark,World Bank Banks' Debt USD
+WDBTDENM Index,Denmark,World Bank Gross External Debt Position
+FDNODNK Index,Denmark,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBNGAUS Index,Australia,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLAUST Index,Australia,World Bank Total Gross External Debt USD
+FDINAUS Index,Australia,World Bank FDI Net Inflows % GDP
+WRGDAUST Index,Australia,World Bank GDP Constant 2010 Prices USD
+BPCGAUS Index,Australia,World Bank Domestic Private Sector Credit to GDP
+HELDAUDS Index,Australia,World Bank Total Short Term Debt
+HELDAULD Index,Australia,World Bank Total Long Term Debt
+WDBAAUST Index,Australia,World Bank Banks' Debt USD
+WDBTAUST Index,Australia,World Bank Gross External Debt Position
+FDNOAUS Index,Australia,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBBGAUSL Index,Australia,World Bank Budget Balance % of GDP
+WBEGAUS Index,Australia,World Bank Export Good/Service % of GDP
+WBIGAUS Index,Australia,World Bank Import Good/Service % of GDP
+WBPIAUS Index,Australia,World Bank CPI (2010 Base 100)
+EHUPAU Index,Australia,Unemployment Rate (%)
+WBNGDEU Index,Germany,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLGERM Index,Germany,World Bank Total Gross External Debt USD
+FDINDEU Index,Germany,World Bank FDI Net Inflows % GDP
+WRGDGERM Index,Germany,World Bank GDP Constant 2010 Prices USD
+BPCGDEU Index,Germany,World Bank Domestic Private Sector Credit to GDP
+HELDDEDS Index,Germany,World Bank Total Short Term Debt
+HELDDELD Index,Germany,World Bank Total Long Term Debt
+WDBAGERM Index,Germany,World Bank Banks' Debt USD
+WDBTGERM Index,Germany,World Bank Gross External Debt Position
+FDNODEU Index,Germany,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBBGGERM Index,Germany,World Bank Budget Balance % of GDP
+WBEGDEU Index,Germany,World Bank Export Good/Service % of GDP
+WBIGDEU Index,Germany,World Bank Import Good/Service % of GDP
+WBPIDEU Index,Germany,World Bank CPI (2010 Base 100)
+EHUPDE Index,Germany,Unemployment Rate (%)
+WBNGHKG Index,Hong Kong,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLCHHK Index,Hong Kong,World Bank Total Gross External Debt USD
+FDINHKG Index,Hong Kong,World Bank FDI Net Inflows % GDP
+WRGDHONG Index,Hong Kong,World Bank GDP Constant 2010 Prices USD
+BPCGHKG Index,Hong Kong,World Bank Domestic Private Sector Credit to GDP
+HELDHKDS Index,Hong Kong,World Bank Total Short Term Debt
+HELDHKLD Index,Hong Kong,World Bank Total Long Term Debt
+WDBAHONG Index,Hong Kong,World Bank Banks' Debt USD
+WDBTHONG Index,Hong Kong,World Bank Gross External Debt Position
+FDNOHKG Index,Hong Kong,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBEGHKG Index,Hong Kong,World Bank Export Good/Service % of GDP
+WBIGHKG Index,Hong Kong,World Bank Import Good/Service % of GDP
+WBPIHKG Index,Hong Kong,World Bank CPI (2010 Base 100)
+EHUPHK Index,Hong Kong,Unemployment Rate (%)
+WBNGJPN Index,Japan,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLJAPA Index,Japan,World Bank Total Gross External Debt USD
+FDINJPN Index,Japan,World Bank FDI Net Inflows % GDP
+WRGDJAPA Index,Japan,World Bank GDP Constant 2010 Prices USD
+BPCGJPN Index,Japan,World Bank Domestic Private Sector Credit to GDP
+HELDJPDS Index,Japan,World Bank Total Short Term Debt
+HELDJPLD Index,Japan,World Bank Total Long Term Debt
+WDBAJAPA Index,Japan,World Bank Banks' Debt USD
+WDBTJAPA Index,Japan,World Bank Gross External Debt Position
+FDNOJPN Index,Japan,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBBGJAPA Index,Japan,World Bank Budget Balance % of GDP
+WBEGJPN Index,Japan,World Bank Export Good/Service % of GDP
+WBIGJPN Index,Japan,World Bank Import Good/Service % of GDP
+WBPIJPN Index,Japan,World Bank CPI (2010 Base 100)
+EHUPJP Index,Japan,Unemployment Rate (%)
+WBNGCHE Index,Switzerland,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLSWIT Index,Switzerland,World Bank Total Gross External Debt USD
+FDINCHE Index,Switzerland,World Bank FDI Net Inflows % GDP
+WRGDSWIT Index,Switzerland,World Bank GDP Constant 2010 Prices USD
+BPCGCHE Index,Switzerland,World Bank Domestic Private Sector Credit to GDP
+HELDCHDS Index,Switzerland,World Bank Total Short Term Debt
+HELDCHLD Index,Switzerland,World Bank Total Long Term Debt
+WDBASWIT Index,Switzerland,World Bank Banks' Debt USD
+WDBTSWIT Index,Switzerland,World Bank Gross External Debt Position
+FDNOCHE Index,Switzerland,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBBGSWIT Index,Switzerland,World Bank Budget Balance % of GDP
+WBEGCHE Index,Switzerland,World Bank Export Good/Service % of GDP
+WBIGCHE Index,Switzerland,World Bank Import Good/Service % of GDP
+WBPICHE Index,Switzerland,World Bank CPI (2010 Base 100)
+EHUPCH Index,Switzerland,Unemployment Rate (%)
+WBNGNLD Index,Netherlands,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLNETH Index,Netherlands,World Bank Total Gross External Debt USD
+FDINNLD Index,Netherlands,World Bank FDI Net Inflows % GDP
+WRGDNETH Index,Netherlands,World Bank GDP Constant 2010 Prices USD
+BPCGNLD Index,Netherlands,World Bank Domestic Private Sector Credit to GDP
+HELDNLDS Index,Netherlands,World Bank Total Short Term Debt
+HELDNLLD Index,Netherlands,World Bank Total Long Term Debt
+WDBANETH Index,Netherlands,World Bank Banks' Debt USD
+WDBTNETH Index,Netherlands,World Bank Gross External Debt Position
+FDNONLD Index,Netherlands,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBBGNETH Index,Netherlands,World Bank Budget Balance % of GDP
+WBEGNLD Index,Netherlands,World Bank Export Good/Service % of GDP
+WBIGNLD Index,Netherlands,World Bank Import Good/Service % of GDP
+WBPINLD Index,Netherlands,World Bank CPI (2010 Base 100)
+EHUPNL Index,Netherlands,Unemployment Rate (%)
+WBNGAUT Index,Austria,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLASTI Index,Austria,World Bank Total Gross External Debt USD
+FDINAUT Index,Austria,World Bank FDI Net Inflows % GDP
+WRGDASTI Index,Austria,World Bank GDP Constant 2010 Prices USD
+BPCGAUT Index,Austria,World Bank Domestic Private Sector Credit to GDP
+HELDATDS Index,Austria,World Bank Total Short Term Debt
+HELDATLD Index,Austria,World Bank Total Long Term Debt
+WDBAASTI Index,Austria,World Bank Banks' Debt USD
+WDBTASTI Index,Austria,World Bank Gross External Debt Position
+FDNOAUT Index,Austria,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBEGAUT Index,Austria,World Bank Export Good/Service % of GDP
+WBIGAUT Index,Austria,World Bank Import Good/Service % of GDP
+WBPIAUT Index,Austria,World Bank CPI (2010 Base 100)
+EHUPAT Index,Austria,Unemployment Rate (%)
+WBNGESP Index,Spain,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLSPAI Index,Spain,World Bank Total Gross External Debt USD
+FDINESP Index,Spain,World Bank FDI Net Inflows % GDP
+WRGDSPAI Index,Spain,World Bank GDP Constant 2010 Prices USD
+BPCGESP Index,Spain,World Bank Domestic Private Sector Credit to GDP
+HELDESDS Index,Spain,World Bank Total Short Term Debt
+HELDESLD Index,Spain,World Bank Total Long Term Debt
+WDBASPAI Index,Spain,World Bank Banks' Debt USD
+WDBTSPAI Index,Spain,World Bank Gross External Debt Position
+FDNOESP Index,Spain,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBBGSPAI Index,Spain,World Bank Budget Balance % of GDP
+WBEGESP Index,Spain,World Bank Export Good/Service % of GDP
+WBIGESP Index,Spain,World Bank Import Good/Service % of GDP
+WBPIESP Index,Spain,World Bank CPI (2010 Base 100)
+EHUPES Index,Spain,Unemployment Rate (%)
+WBNGFRA Index,France,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLFRAN Index,France,World Bank Total Gross External Debt USD
+FDINFRA Index,France,World Bank FDI Net Inflows % GDP
+WRGDFRAN Index,France,World Bank GDP Constant 2010 Prices USD
+BPCGFRA Index,France,World Bank Domestic Private Sector Credit to GDP
+HELDFRDS Index,France,World Bank Total Short Term Debt
+HELDFRLD Index,France,World Bank Total Long Term Debt
+WDBAFRAN Index,France,World Bank Banks' Debt USD
+WDBTFRAN Index,France,World Bank Gross External Debt Position
+FDNOFRA Index,France,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBBGFRAN Index,France,World Bank Budget Balance % of GDP
+WBEGFRA Index,France,World Bank Export Good/Service % of GDP
+WBIGFRA Index,France,World Bank Import Good/Service % of GDP
+WBPIFRA Index,France,World Bank CPI (2010 Base 100)
+EHUPFR Index,France,Unemployment Rate (%)
+WBNGSGP Index,Singapore,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLSING Index,Singapore,World Bank Total Gross External Debt USD
+FDINSGP Index,Singapore,World Bank FDI Net Inflows % GDP
+WRGDSING Index,Singapore,World Bank GDP Constant 2010 Prices USD
+BPCGSGP Index,Singapore,World Bank Domestic Private Sector Credit to GDP
+HELDSGDS Index,Singapore,World Bank Total Short Term Debt
+HELDSGLD Index,Singapore,World Bank Total Long Term Debt
+FDNOSGP Index,Singapore,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBEGSGP Index,Singapore,World Bank Export Good/Service % of GDP
+WBIGSGP Index,Singapore,World Bank Import Good/Service % of GDP
+WBPISGP Index,Singapore,World Bank CPI (2010 Base 100)
+EHUPSG Index,Singapore,Unemployment Rate (%)
+WBNGGBR Index,United Kingdom,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLUK Index,United Kingdom,World Bank Total Gross External Debt USD
+FDINGBR Index,United Kingdom,World Bank FDI Net Inflows % GDP
+WRGDUK Index,United Kingdom,World Bank GDP Constant 2010 Prices USD
+BPCGGBR Index,United Kingdom,World Bank Domestic Private Sector Credit to GDP
+HELDGBDS Index,United Kingdom,World Bank Total Short Term Debt
+HELDGBLD Index,United Kingdom,World Bank Total Long Term Debt
+WDBAUK Index,United Kingdom,World Bank Banks' Debt USD
+WDBTUK Index,United Kingdom,World Bank Gross External Debt Position
+FDNOGBR Index,United Kingdom,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBBGUK Index,United Kingdom,World Bank Budget Balance % of GDP
+WBEGGBR Index,United Kingdom,World Bank Export Good/Service % of GDP
+WBIGGBR Index,United Kingdom,World Bank Import Good/Service % of GDP
+WBPIGBR Index,United Kingdom,World Bank CPI (2010 Base 100)
+EHUPGB Index,United Kingdom,Unemployment Rate (%)
+WBNGTHA Index,Thailand,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLTHAI Index,Thailand,World Bank Total Gross External Debt USD
+FDINTHA Index,Thailand,World Bank FDI Net Inflows % GDP
+WRGDTHAI Index,Thailand,World Bank GDP Constant 2010 Prices USD
+BPCGTHA Index,Thailand,World Bank Domestic Private Sector Credit to GDP
+HELDTHDS Index,Thailand,World Bank Total Short Term Debt
+HELDTHLD Index,Thailand,World Bank Total Long Term Debt
+WDBATHAI Index,Thailand,World Bank Banks' Debt USD
+WDBTTHAI Index,Thailand,World Bank Gross External Debt Position
+FDNOTHA Index,Thailand,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBBGTHAI Index,Thailand,World Bank Budget Balance % of GDP
+WBEGTHA Index,Thailand,World Bank Export Good/Service % of GDP
+WBIGTHA Index,Thailand,World Bank Import Good/Service % of GDP
+WBPITHA Index,Thailand,World Bank CPI (2010 Base 100)
+EHUPTH Index,Thailand,Unemployment Rate (%)
+WBNGCHL Index,Chile,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLCHIL Index,Chile,World Bank Total Gross External Debt USD
+FDINCHL Index,Chile,World Bank FDI Net Inflows % GDP
+WRGDCHIL Index,Chile,World Bank GDP Constant 2010 Prices USD
+BPCGCHL Index,Chile,World Bank Domestic Private Sector Credit to GDP
+HELDCLDS Index,Chile,World Bank Total Short Term Debt
+HELDCLLD Index,Chile,World Bank Total Long Term Debt
+WDBACHIL Index,Chile,World Bank Banks' Debt USD
+WDBTCHIL Index,Chile,World Bank Gross External Debt Position
+FDNOCHL Index,Chile,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBBGCHIL Index,Chile,World Bank Budget Balance % of GDP
+WBEGCHL Index,Chile,World Bank Export Good/Service % of GDP
+WBIGCHL Index,Chile,World Bank Import Good/Service % of GDP
+WBPICHL Index,Chile,World Bank CPI (2010 Base 100)
+EHUPCL Index,Chile,Unemployment Rate (%)
+WBNGTUR Index,Turkey,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLTURK Index,Turkey,World Bank Total Gross External Debt USD
+FDINTUR Index,Turkey,World Bank FDI Net Inflows % GDP
+WRGDTURK Index,Turkey,World Bank GDP Constant 2010 Prices USD
+BPCGTUR Index,Turkey,World Bank Domestic Private Sector Credit to GDP
+HELDTRDS Index,Turkey,World Bank Total Short Term Debt
+HELDTRLD Index,Turkey,World Bank Total Long Term Debt
+WDBATURK Index,Turkey,World Bank Banks' Debt USD
+WDBTTURK Index,Turkey,World Bank Gross External Debt Position
+FDNOTUR Index,Turkey,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBBGTURK Index,Turkey,World Bank Budget Balance % of GDP
+WBEGTUR Index,Turkey,World Bank Export Good/Service % of GDP
+WBIGTUR Index,Turkey,World Bank Import Good/Service % of GDP
+WBPITUR Index,Turkey,World Bank CPI (2010 Base 100)
+EHUPTR Index,Turkey,Unemployment Rate (%)
+WBNGZAF Index,South Africa,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLSOUT Index,South Africa,World Bank Total Gross External Debt USD
+FDINZAF Index,South Africa,World Bank FDI Net Inflows % GDP
+WRGDSOUT Index,South Africa,World Bank GDP Constant 2010 Prices USD
+BPCGZAF Index,South Africa,World Bank Domestic Private Sector Credit to GDP
+HELDZADS Index,South Africa,World Bank Total Short Term Debt
+HELDZALD Index,South Africa,World Bank Total Long Term Debt
+WDBASOUT Index,South Africa,World Bank Banks' Debt USD
+WDBTSOUT Index,South Africa,World Bank Gross External Debt Position
+FDNOZAF Index,South Africa,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBBGSOUT Index,South Africa,World Bank Budget Balance % of GDP
+WBEGZAF Index,South Africa,World Bank Export Good/Service % of GDP
+WBIGZAF Index,South Africa,World Bank Import Good/Service % of GDP
+WBPIZAF Index,South Africa,World Bank CPI (2010 Base 100)
+EHUPZA Index,South Africa,Unemployment Rate (%)
+WBNGCHN Index,China,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLCHHK Index,Hong Kong,World Bank Total Gross External Debt USD
+FDINCHN Index,China,World Bank FDI Net Inflows % GDP
+WRGDCHIN Index,China,World Bank GDP Constant 2010 Prices USD
+BPCGCHIN Index,China,World Bank Domestic Private Sector Credit to GDP
+WDBACHHK Index,China,World Bank Banks' Debt USD
+WDBTCHHK Index,China,World Bank Gross External Debt Position
+FDNOCHN Index,China,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBBGCHIN Index,China,World Bank Budget Balance % of GDP
+WBEGCHN Index,China,World Bank Export Good/Service % of GDP
+WBIGCHN Index,China,World Bank Import Good/Service % of GDP
+WBPICHN Index,China,World Bank CPI (2010 Base 100)
+EHUPCN Index,China,Unemployment Rate (%)
+WBNGIDN Index,Indonesia,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLINDO Index,Indonesia,World Bank Total Gross External Debt USD
+FDINIDN Index,Indonesia,World Bank FDI Net Inflows % GDP
+WRGDINDO Index,Indonesia,World Bank GDP Constant 2010 Prices USD
+BPCGIDN Index,Indonesia,World Bank Domestic Private Sector Credit to GDP
+HELDIDDS Index,Indonesia,World Bank Total Short Term Debt
+HELDIDLD Index,Indonesia,World Bank Total Long Term Debt
+WDBAINDO Index,Indonesia,World Bank Banks' Debt USD
+WDBTINDO Index,Indonesia,World Bank Gross External Debt Position
+FDNOIDN Index,Indonesia,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBBGINDO Index,Indonesia,World Bank Budget Balance % of GDP
+WBEGIDN Index,Indonesia,World Bank Export Good/Service % of GDP
+WBIGIDN Index,Indonesia,World Bank Import Good/Service % of GDP
+WBPIIDN Index,Indonesia,World Bank CPI (2010 Base 100)
+EHUPID Index,Indonesia,Unemployment Rate (%)
+WBNGPHL Index,Philippines,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLPHIL Index,Philippines,World Bank Total Gross External Debt USD
+FDINPHL Index,Philippines,World Bank FDI Net Inflows % GDP
+WRGDPHIL Index,Philippines,World Bank GDP Constant 2010 Prices USD
+BPCGPHL Index,Philippines,World Bank Domestic Private Sector Credit to GDP
+HELDPHDS Index,Philippines,World Bank Total Short Term Debt
+HELDPHLD Index,Philippines,World Bank Total Long Term Debt
+FDNOPHL Index,Philippines,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBBGPHIL Index,Philippines,World Bank Budget Balance % of GDP
+WBEGPHL Index,Philippines,World Bank Export Good/Service % of GDP
+WBIGPHL Index,Philippines,World Bank Import Good/Service % of GDP
+WBPIPHL Index,Philippines,World Bank CPI (2010 Base 100)
+EHUPPH Index,Philippines,Unemployment Rate (%)
+WBNGIND Index,India,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLINDI Index,India,World Bank Total Gross External Debt USD
+FDININD Index,India,World Bank FDI Net Inflows % GDP
+WRGDINDI Index,India,World Bank GDP Constant 2010 Prices USD
+BPCGIND Index,India,World Bank Domestic Private Sector Credit to GDP
+HELDINDS Index,India,World Bank Total Short Term Debt
+HELDINLD Index,India,World Bank Total Long Term Debt
+WDBAINDI Index,India,World Bank Banks' Debt USD
+WDBTINDI Index,India,World Bank Gross External Debt Position
+FDNOIND Index,India,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBBGINDI Index,India,World Bank Budget Balance % of GDP
+WBEGIND Index,India,World Bank Export Good/Service % of GDP
+WBIGIND Index,India,World Bank Import Good/Service % of GDP
+WBPIIND Index,India,World Bank CPI (2010 Base 100)
+EHUPIN Index,India,Unemployment Rate (%)
+WBNGPOL Index,Poland,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLPOLA Index,Poland,World Bank Total Gross External Debt USD
+FDINPOL Index,Poland,World Bank FDI Net Inflows % GDP
+WRGDPOLA Index,Poland,World Bank GDP Constant 2010 Prices USD
+BPCGPOL Index,Poland,World Bank Domestic Private Sector Credit to GDP
+HELDPLDS Index,Poland,World Bank Total Short Term Debt
+HELDPLLD Index,Poland,World Bank Total Long Term Debt
+WDBAPOLA Index,Poland,World Bank Banks' Debt USD
+WDBTPOLA Index,Poland,World Bank Gross External Debt Position
+FDNOPOL Index,Poland,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBBGPOLA Index,Poland,World Bank Budget Balance % of GDP
+WBEGPOL Index,Poland,World Bank Export Good/Service % of GDP
+WBIGPOL Index,Poland,World Bank Import Good/Service % of GDP
+WBPIPOL Index,Poland,World Bank CPI (2010 Base 100)
+EHUPPL Index,Poland,Unemployment Rate (%)
+WBNGRUS Index,Russia,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLRUSS Index,Russia,World Bank Total Gross External Debt USD
+FDINRUS Index,Russia,World Bank FDI Net Inflows % GDP
+WRGDRUSS Index,Russia,World Bank GDP Constant 2010 Prices USD
+BPCGRUS Index,Russia,World Bank Domestic Private Sector Credit to GDP
+HELDRUDS Index,Russia,World Bank Total Short Term Debt
+HELDRULD Index,Russia,World Bank Total Long Term Debt
+WDBARUSS Index,Russia,World Bank Banks' Debt USD
+WDBTRUSS Index,Russia,World Bank Gross External Debt Position
+FDNORUS Index,Russia,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBBGRUSS Index,Russia,World Bank Budget Balance % of GDP
+WBEGRUS Index,Russia,World Bank Export Good/Service % of GDP
+WBIGRUS Index,Russia,World Bank Import Good/Service % of GDP
+WBPIRUS Index,Russia,World Bank CPI (2010 Base 100)
+EHUPRU Index,Russia,Unemployment Rate (%)
+WBNGMYS Index,Malaysia,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLMALY Index,Malaysia,World Bank Total Gross External Debt USD
+FDINMYS Index,Malaysia,World Bank FDI Net Inflows % GDP
+WRGDMALY Index,Malaysia,World Bank GDP Constant 2010 Prices USD
+BPCGMYS Index,Malaysia,World Bank Domestic Private Sector Credit to GDP
+HELDMYDS Index,Malaysia,World Bank Total Short Term Debt
+HELDMYLD Index,Malaysia,World Bank Total Long Term Debt
+WDBAMALY Index,Malaysia,World Bank Banks' Debt USD
+WDBTMALY Index,Malaysia,World Bank Gross External Debt Position
+FDNOMYS Index,Malaysia,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBBGMALA Index,Malaysia,World Bank Budget Balance % of GDP
+WBEGMYS Index,Malaysia,World Bank Export Good/Service % of GDP
+WBIGMYS Index,Malaysia,World Bank Import Good/Service % of GDP
+WBPIMYS Index,Malaysia,World Bank CPI (2010 Base 100)
+EHUPMY Index,Malaysia,Unemployment Rate (%)
+EHUPTW Index,Taiwan,Unemployment Rate (%)
+WBNGMEX Index,Mexico,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLMEXI Index,Mexico,World Bank Total Gross External Debt USD
+FDINMEX Index,Mexico,World Bank FDI Net Inflows % GDP
+WRGDMEXI Index,Mexico,World Bank GDP Constant 2010 Prices USD
+BPCGMEX Index,Mexico,World Bank Domestic Private Sector Credit to GDP
+HELDMXDS Index,Mexico,World Bank Total Short Term Debt
+HELDMXLD Index,Mexico,World Bank Total Long Term Debt
+WDBAMEXI Index,Mexico,World Bank Banks' Debt USD
+WDBTMEXI Index,Mexico,World Bank Gross External Debt Position
+FDNOMEX Index,Mexico,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBBGMEXI Index,Mexico,World Bank Budget Balance % of GDP
+WBEGMEX Index,Mexico,World Bank Export Good/Service % of GDP
+WBIGMEX Index,Mexico,World Bank Import Good/Service % of GDP
+WBPIMEX Index,Mexico,World Bank CPI (2010 Base 100)
+EHUPMX Index,Mexico,Unemployment Rate (%)
+WBNGKOR Index,South Korea,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLKORE Index,South Korea,World Bank Total Gross External Debt USD
+WRGDRKOR Index,South Korea,World Bank GDP Constant 2010 Prices USD
+BPCGKOR Index,South Korea,World Bank Domestic Private Sector Credit to GDP
+HELDKRDS Index,South Korea,World Bank Total Short Term Debt
+HELDKRLD Index,South Korea,World Bank Total Long Term Debt
+WDBAKORE Index,South Korea,World Bank Banks' Debt USD
+WDBTKORE Index,South Korea,World Bank Gross External Debt Position
+FDNOKOR Index,South Korea,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBBGKORE Index,South Korea,World Bank Budget Balance % of GDP
+WBEGKOR Index,South Korea,World Bank Export Good/Service % of GDP
+WBIGKOR Index,South Korea,World Bank Import Good/Service % of GDP
+WBPIKOR Index,South Korea,World Bank CPI (2010 Base 100)
+EHUPKR Index,South Korea,Unemployment Rate (%)
+WBNGBRA index,Brazil,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLBRAZ index,Brazil,World Bank Total Gross External Debt USD
+FDINBRA index,Brazil,World Bank FDI Net Inflows % GDP
+WRGDBRAZ index,Brazil,World Bank GDP Constant 2010 Prices USD
+BPCGBRA index,Brazil,World Bank Domestic Private Sector Credit to GDP
+HELDBRDS index,Brazil,World Bank Total Short Term Debt
+HELDBRLD index,Brazil,World Bank Total Long Term Debt
+WDBABRAZ index,Brazil,World Bank Banks' Debt USD
+WDBTBRAZ index,Brazil,World Bank Gross External Debt Position
+FDNOBRA index,Brazil,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBBGBRAZ index,Brazil,World Bank Budget Balance % of GDP
+WBEGBRA index,Brazil,World Bank Export Good/Service % of GDP
+WBIGBRA index,Brazil,World Bank Import Good/Service % of GDP
+WBPIBRA index,Brazil,World Bank CPI (2010 Base 100)
+EHUPBR index,Brazil,Unemployment Rate (%)
+WBNGISL Index,Iceland,World Bank Bank NonPerforming Loans to Total Gross Loans %
+WDTLICEL Index,Iceland,World Bank Total Gross External Debt USD
+FDINISL Index,Iceland,World Bank FDI Net Inflows % GDP
+WRGDICEL Index,Iceland,World Bank GDP Constant 2010 Prices USD
+BPCGISL Index,Iceland,World Bank Domestic Private Sector Credit to GDP
+HELDISDS Index,Iceland,World Bank Total Short Term Debt
+HELDISLD Index,Iceland,World Bank Total Long Term Debt
+FDNOISL Index,Iceland,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBBGICEL Index,Iceland,World Bank Budget Balance % of GDP
+WBEGISL Index,Iceland,World Bank Export Good/Service % of GDP
+WBIGISL Index,Iceland,World Bank Import Good/Service % of GDP
+WBPIISL Index,Iceland,World Bank CPI (2010 Base 100)
+EHUPIS Index,Iceland,Unemployment Rate (%)
+FDNONZL Index,New Zealand,World Bank Foreign Direct Investment Net Outflows % of GDP
+WBBGNEWZ Index,New Zealand,World Bank Budget Balance % of GDP
+WBEGNZL Index,New Zealand,World Bank Export Good/Service % of GDP
+WBIGNZL Index,New Zealand,World Bank Import Good/Service % of GDP
+WBPINZL Index,New Zealand,World Bank CPI (2010 Base 100)
+EHUPNZ Index,New Zealand,Unemployment Rate (%)
+WBEGDNK Index,Denmark,World Bank Export Good/Service % of GDP
+WBIGDNK Index,Denmark,World Bank Import Good/Service % of GDP
+WBPIDNK Index,Denmark,World Bank CPI (2010 Base 100)
+EHUPDK Index,Denmark,Unemployment Rate (%)
+MCGDITAL Index,Italy,GDP to Market Cap ratio
+MCGDPORT Index,Portugal,GDP to Market Cap ratio
+MCGDNORW Index,Norway,GDP to Market Cap ratio
+MCGDBELG Index,Belgium,GDP to Market Cap ratio
+MCGDISRA Index,Israel,GDP to Market Cap ratio
+MCGDSWED Index,Sweden,GDP to Market Cap ratio
+MCGDNEWZ Index,New Zealand,GDP to Market Cap ratio
+MCGDIREL Index,Ireland,GDP to Market Cap ratio
+MCGDFINL Index,Finland,GDP to Market Cap ratio
+MCGDDENM Index,Denmark,GDP to Market Cap ratio
+MCGDAUST Index,Australia,GDP to Market Cap ratio
+MCGDGERM Index,Germany,GDP to Market Cap ratio
+MCGDHK Index,Hong Kong,GDP to Market Cap ratio
+MCGDJAPA Index,Japan,GDP to Market Cap ratio
+MCGDSWIT Index,Switzerland,GDP to Market Cap ratio
+MCGDNETH Index,Netherlands,GDP to Market Cap ratio
+MCGDAUSR Index,Austria,GDP to Market Cap ratio
+MCGDSPAI Index,Spain,GDP to Market Cap ratio
+MCGDFRAN Index,France,GDP to Market Cap ratio
+MCGDSING Index,Singapore,GDP to Market Cap ratio
+MCGDUK Index,United Kingdom,GDP to Market Cap ratio
+MCGDTHAI Index,Thailand,GDP to Market Cap ratio
+MCGDCHIL Index,Chile,GDP to Market Cap ratio
+MCGDTURK Index,Turkey,GDP to Market Cap ratio
+MCGDSAF Index,South Africa,GDP to Market Cap ratio
+MCGDCHIN Index,China,GDP to Market Cap ratio
+MCGDINDO Index,Indonesia,GDP to Market Cap ratio
+MCGDPHIL Index,Philippines,GDP to Market Cap ratio
+MCGDINDI Index,India,GDP to Market Cap ratio
+MCGDPOLA Index,Poland,GDP to Market Cap ratio
+MCGDRUSS Index,Russia,GDP to Market Cap ratio
+MCGDMALA Index,Malaysia,GDP to Market Cap ratio
+MCGDTAIW Index,Taiwan,GDP to Market Cap ratio
+MCGDMEX Index,Mexico,GDP to Market Cap ratio
+MCGDSK Index,South Korea,GDP to Market Cap ratio
+MCGDBRAZ Index,Brazil,GDP to Market Cap ratio
+MCGDICEL Index,Iceland,GDP to Market Cap ratio
