@@ -153,7 +153,7 @@ def LaunchProcess(ProcessName, config, logfile, ProcObjects, ProcStatus, Earlies
         except:
             Rlogfile = config[ProcessName]['Rscript'].upper()
             Rlogfile = config[ProcessName]['Rscript'].replace('.R','.log')
-        Command = '\"C:\Program Files (x86)\R\R-2.8.0\Bin\R\" --vanilla <'+config[ProcessName]['Rscript']+'> '+Rlogfile
+        Command = '\"C:\Program Files\R\R-3.1.2\Bin\R\" --vanilla <'+config[ProcessName]['Rscript']+'> '+Rlogfile
         try:
             if config[ProcessName].get('Arguments'):
                 arguments_flag = config[ProcessName]['Arguments']
@@ -172,6 +172,7 @@ def LaunchProcess(ProcessName, config, logfile, ProcObjects, ProcStatus, Earlies
     config[ProcessName]['Command'] = Command
     logfile.write(' '+datetime.datetime.now().strftime("%H:%M:%S")+' Launching '+config[ProcessName]['DisplayName']+'...\n')
     logfile.write(' Command: '+config[ProcessName]['Command']+'\n\n')
+    print("config[ProcessName]['Command']",config[ProcessName]['Command'])
     ProcObjects[ProcessName] = SP.Popen(config[ProcessName]['Command'], stdout=SP.PIPE, stderr=SP.PIPE)
     #Config.set(ProcessName,'AttemptNumber',Config.getint(ProcessName,'AttemptNumber') + 1)
     if config[ProcessName].get('AttemptNumber'):
@@ -190,16 +191,27 @@ def ReceiveProcess(ProcessName, ProcessObject, config, logfile, WriteFlag, Archi
     logfile.write(' ' + TimeString() + ' ' + config[ProcessName]['DisplayName'] + ' Process Finished: \n')
     Error = False
     #if Config.get(ProcessName,'method') in ['MQA','powershell','Split','Combine','Python']:
-    if config[ProcessName]['method'] in ['MQA', 'powershell', 'Split', 'Combine', 'Python']:
-        if ProcessObject.stdout:
+    if config[ProcessName]['method'] in ['MQA', 'powershell', 'Split', 'Combine']:
         # FILE = list(ProcessObject.communicate())
-            FILE = list(ProcessObject.stdout) # ProcessObject.stdout is a file object that provides output from the child process. Otherwise, it is None.
-        else:
-            FILE = None
+        #if ProcessObject.stdout
+        FILE = list(ProcessObject.stdout) # ProcessObject.stdout is a file object that provides output from the child process. Otherwise, it is None.
+        print("FILE",list(ProcessObject.stdout))
+        REpattern = re.compile('Error')
+        #else:
+        #    FILE = None
+        for line in [elem for elem in FILE if elem.strip() != ""]:
+            logfile.write('  '+str(line))
+    elif config[ProcessName]['method'] == 'Python':
+        FILE = list(ProcessObject.stdout)
         REpattern = re.compile('Error')
         if FILE:
             for line in [elem for elem in FILE if elem.strip() != ""]:
-                logfile.write('  '+str(line))
+                logfile.write('  ' + str(line))
+        else:
+            ERR_FILE = list(ProcessObject.stderr)
+            if ERR_FILE:
+                FILE.append('Error')
+                logfile.write('  ' + str(ERR_FILE))
     elif config[ProcessName]['method'] in ['Stata','SAS','R']:
         plogfile = open(config[ProcessName]['logfile'],'r')
         FILE = plogfile.readlines()
@@ -207,11 +219,13 @@ def ReceiveProcess(ProcessName, ProcessObject, config, logfile, WriteFlag, Archi
         if config[ProcessName]['method'] == 'Stata': REpattern = re.compile('r\(\d+\)')  # Matches r( one or more digits) at the start of a line.
         if config[ProcessName]['method'] == 'R': REpattern = re.compile('Error')
         if config[ProcessName]['method'] == 'SAS': REpattern = re.compile('E(RROR|rror)')  # Matches Error or ERROR.
-    if FILE:
-        for line in [x for x in FILE if re.match(str(REpattern),str(x)) != None]:
+#    if FILE:
+
+    for line in [x for x in FILE if re.match(str(REpattern),str(x)) != None]:
             logfile.write(' Error detected:\n  >> '+str(line)+'\n')
             Error = True
             break
+
     if config[ProcessName].get('FileToCheck') != None:
         filecheck_flag = config[ProcessName].get('FileToCheck')
     else:
@@ -220,36 +234,37 @@ def ReceiveProcess(ProcessName, ProcessObject, config, logfile, WriteFlag, Archi
     if filecheck_flag != 'None' and not(Error):
         # try:
         if True:
-            print("filecheck_flag",filecheck_flag)
             if not isinstance(filecheck_flag, list):
                 files_to_check = filecheck_flag.split(',')
             else:
                 files_to_check = filecheck_flag
+            print("files_to_check",files_to_check)
             for each_file in files_to_check:
-                NewFileSize = os.stat(each_file.strip()).st_size
-                (filepath,filename) = os.path.split(each_file.strip())
-                (root,ext) = os.path.splitext(filename)
-                ArchiveFiles = [elem for elem in os.listdir(config[ProcessName]['ArchiveDir']) if re.search('^'+root+'.(\d{8})'+ext+'$',elem)!=None]
-                print("ArchiveFiles",ArchiveFiles)
-                if not ArchiveFiles:
-                    #implementation_file = os.path.join("S:\Quant\qsf_etf\implementation", filename)
-                    implementation_path = config[ProcessName]['ArchiveDir']
-                    implementation_path = implementation_path.split('ARCHIVES')[0]
-                    implementation_file = os.path.join(implementation_path, filename)
-                    if os.path.exists(implementation_file):
-                        LastFile = implementation_file
-                else:
-                    ArchiveFiles.sort()
-                    LastFile = os.path.join(config[ProcessName]['ArchiveDir'],ArchiveFiles[-1])
-                LastFileSize = os.stat(LastFile).st_size
-                if NewFileSize < 0.99*LastFileSize:
-                    logfile.write(' Filesize of '+each_file.strip()+' NOT consistent with filesize of '+LastFile+'.\n')
-                    logfile.write(' Filesize Error: '+each_file.strip()+' only '+str(NewFileSize)+'k compared with '+str(LastFileSize)+'k for '+LastFile+'.\n')
-                    SendRobustEmail(Recipients,[],'Normal operation will continue.\n\nThe file size of '+filename+' will need to be checked against '+config[ProcessName]['ArchiveDir']+'.','WARNING: '+config[ProcessName]['DisplayName']+' files size check failed on '+os.environ.get('COMPUTERNAME','UNKNOWN'))
-                    logfile.write(('-'*80)+'\n File size check for ' +config[ProcessName]['DisplayName']+' failed:\n\n')
-                else:
-                    logfile.write(' Filesize of '+each_file.strip()+' consistent with filesize of '+LastFile+'.\n')
-        # except:
+                if os.path.exists(each_file):
+                    print("each_file",each_file)
+                    NewFileSize = os.stat(each_file.strip()).st_size
+                    (filepath,filename) = os.path.split(each_file.strip())
+                    (root,ext) = os.path.splitext(filename)
+                    ArchiveFiles = [elem for elem in os.listdir(config[ProcessName]['ArchiveDir']) if re.search('^'+root+'.(\d{8})'+ext+'$',elem)!=None]
+                    if not ArchiveFiles:
+                        #implementation_file = os.path.join("S:\Quant\qsf_etf\implementation", filename)
+                        implementation_path = config[ProcessName]['ArchiveDir']
+                        implementation_path = implementation_path.split('ARCHIVES')[0]
+                        implementation_file = os.path.join(implementation_path, filename)
+                        if os.path.exists(implementation_file):
+                            LastFile = implementation_file
+                    else:
+                        ArchiveFiles.sort()
+                        LastFile = os.path.join(config[ProcessName]['ArchiveDir'],ArchiveFiles[-1])
+                    LastFileSize = os.stat(LastFile).st_size
+                    if NewFileSize < 0.99*LastFileSize:
+                        logfile.write(' Filesize of '+each_file.strip()+' NOT consistent with filesize of '+LastFile+'.\n')
+                        logfile.write(' Filesize Error: '+each_file.strip()+' only '+str(NewFileSize)+'k compared with '+str(LastFileSize)+'k for '+LastFile+'.\n')
+                        SendRobustEmail(Recipients,[],'Normal operation will continue.\n\nThe file size of '+filename+' will need to be checked against '+config[ProcessName]['ArchiveDir']+'.','WARNING: '+config[ProcessName]['DisplayName']+' files size check failed on '+os.environ.get('COMPUTERNAME','UNKNOWN'))
+                        logfile.write(('-'*80)+'\n File size check for ' +config[ProcessName]['DisplayName']+' failed:\n\n')
+                    else:
+                        logfile.write(' Filesize of '+each_file.strip()+' consistent with filesize of '+LastFile+'.\n')
+        #except:
         #     (filepath,filename) = os.path.split(filecheck_flag)
         #     SendRobustEmail(Recipients,[],'Normal operation will continue.\n\nThe file size of '+filename+' will need to be checked manually against '+config[ProcessName]['ArchiveDir']+'.','WARNING: '+config[ProcessName]['DisplayName']+' files size check failed on '+os.environ.get('COMPUTERNAME','UNKNOWN'))
         #     exceptionType, exceptionValue, exceptionTraceback = sys.exc_info()

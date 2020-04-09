@@ -86,7 +86,7 @@ def main():
         sys.exit(1)
 
     monthly  = bbgClient.remoteBbgLatestPriceQuery('Etf monthly query',tickers, startDate,endDate, period='MONTHLY', adjSplit=True, ret=True, periodAdjust='CALENDAR')
-    saveOutputFile(monthly, args.outDir, fileName='fx_etf_carry.csv')
+    saveOutputFile(monthly, args.outDir, fileName='fx_etf_carry_update.csv')
 
     #print('INFO: Finished')
 

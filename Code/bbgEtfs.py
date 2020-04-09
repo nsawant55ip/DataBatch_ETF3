@@ -10,7 +10,7 @@ import bbgClient
 
 def processOptions():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-O', '--outDir', dest='outDir', default="C:\C:\DataBatch_ETF_NewProject\Output", help='Output Directory')
+    parser.add_argument('-O', '--outDir', dest='outDir', default="C:\DataBatch_ETF_NewProject\Output", help='Output Directory')
     # parser.add_argument('-S', '--start',   dest='start', default = '01/01/1987', help='Start date in dd/mm/yyyy format')
     parser.add_argument('-S', '--start', dest='start', default='', help='Start date in dd/mm/yyyy format')
     parser.add_argument('-E', '--end', dest='end', default='', help='End date in dd/mm/yyyy format')

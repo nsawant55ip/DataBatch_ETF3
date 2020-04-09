@@ -104,7 +104,6 @@ def main():
             os.remove(static_output_file)
         shutil.copy2(output_path_file, static_output_file)
     else:
-        print("static_output_file",static_output_file)
         if os.path.exists(static_output_file):
             shutil.copy2(static_output_file, output_path_file)
         else:
