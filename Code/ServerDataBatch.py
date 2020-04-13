@@ -77,8 +77,7 @@ else:
     logfile.write(' Batch info will be written to ' + LOCALdir + '.\n')
 
 # Put a try,except around everything so that errors will at least be written to the logfile.
-# try:
-if True:
+try:
     # Work out what's going to be running and log it.
     ToExecute = ['MainBatch', 'Segments', 'Betas', 'DailyPricing']
     if args.ExecuteMainBatch == False:
