@@ -143,10 +143,10 @@ try:
     # Send the log to the data batch primary admin.
     # DBU.SendRobustEmail(Recipients, Attachments, Text, Subject)
     logfile.flush()
-    # DBU.SendRobustEmail(TeamEmails,  # Recipients
-    #                     [],  # Attachments
-    #                     os.path.join(LOCALdir, 'log.txt'),  # Text
-    #                     os.environ.get('COMPUTERNAME', 'UNKNOWN') + ' ETF Databatch Launched')  # Subject
+    DBU.SendRobustEmail(TeamEmails,  # Recipients
+                        [],  # Attachments
+                        os.path.join(LOCALdir, 'log.txt'),  # Text
+                        os.environ.get('COMPUTERNAME', 'UNKNOWN') + ' ETF Databatch Launched')  # Subject
 
     # Check whether we have access to the network drives where the archives are kept.
     #Unaccessible = [elem for elem in Config.sections() if Config.get(elem, 'Archive') != 'None' and not (os.path.exists(Config.get(elem, 'ArchiveDir')))]
@@ -378,7 +378,7 @@ except:
     logfile.write('\n End of program execution ('+datetime.datetime.now().strftime("%A %m/%d/%Y %H:%M:%S")+').\n'+('-'*80)+'\n')
     logfile.close
     print('Exception raised.\n')
-     logfile.flush()
+    logfile.flush()
     if RunMode == 'TEST':
         DBU.SendRobustEmail(TeamEmails,[],os.path.join(LOCALdir,'log.txt'),os.environ.get('COMPUTERNAME','UNKNOWN')+' Server ETF Data Batch Python Error.')
     else:
