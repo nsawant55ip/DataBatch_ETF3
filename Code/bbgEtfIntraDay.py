@@ -24,12 +24,16 @@ if __name__ == "__main__":
     endDate   = datetime.datetime.now()-datetime.timedelta(days=1)
     startDate = endDate-datetime.timedelta(days=30)
     allSecDict = dict()
-    file1 = open(args.outputcsvdaily, 'w')
+    file1 = open(args.outputcsvdaily, 'w', newline='')
+    writer = csv.writer(file1)
+    #print("mqaid,tick,datetime,close", file=sys.stderr)
+    header = ['mqaid','tick','datetime','close']
+    writer.writerow(header)
     #print("mqaid,tick,datetime,close", file=file1)
     for mqaid, security in securities.items():
         currDate = startDate
         secDict = dict()
-        #print(("Start %s" % security))
+        print(("Start %s" % security))
         while currDate < endDate:
             currDate = currDate + datetime.timedelta(days=1)
             if currDate.weekday() in [5,6]: 

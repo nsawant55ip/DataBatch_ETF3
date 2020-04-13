@@ -4,6 +4,7 @@ from datetime import timedelta
 from dateutil.relativedelta import relativedelta
 import argparse
 import bbgClient
+import os
 import pandas as pd
 
 MONTHLY_FILE_NAME = "C:/DataBatch_ETF_NewProject/Output/US_IDX_IMP_M_update.csv"
@@ -14,7 +15,7 @@ def processOptions():
     parser = argparse.ArgumentParser()
     parser.add_argument('-S', '--start', dest='start', default='', help='Start date in dd/mm/yyyy format')
     parser.add_argument('-E', '--end', dest='end', default='', help='End date in dd/mm/yyyy format')
-    parser.add_argument('-I', '--input', dest='input', default="C:\DataBatch_ETF_NewProject\Inputs\US_IDX_IMP_M_STATIC.csv",
+    parser.add_argument('-I', '--inputdir', dest='inputdir', default="C:\DataBatch_ETF_NewProject\Inputs",
                         help='The Static Input Filename to use when not -rerunning')
     parser.add_argument('-C', '--codes', dest='codes', default="C:\DataBatch_ETF_NewProject\Output\idx_univ.csv",
                       help='The prowess codes file.')
@@ -45,9 +46,9 @@ def getUniverse(univfilename):
 def make_price_table(price_data):
     try:
         price_data_table = list()
-        for index, values in price_data.iteritems():
+        for index, values in price_data.items():
             if index in price_data:
-                for currdate, d in values.iteritems():
+                for currdate, d in values.items():
                     if ('PX_LAST' in d):
                         row = [currdate.strftime('%m/%d/%Y'), index, d['PX_LAST']]
                         price_data_table.append(row)
@@ -66,7 +67,7 @@ def writeOutputFileWhenReRun(file_name, blmIndexes, monthlyprices):
         writer.writerow(header)
         for mqaid in blmIndexes:
             if blmIndexes[mqaid]['index'] in monthlyprices:
-                for currdate, d in monthlyprices[blmIndexes[mqaid]['index']].iteritems():
+                for currdate, d in monthlyprices[blmIndexes[mqaid]['index']].items():
                     if ('PX_LAST' in d):
                         writer.writerow([currdate.strftime('%m/%d/%Y'),
                                          mqaid, blmIndexes[mqaid]['index'].replace(' INDEX', ''),
@@ -191,8 +192,10 @@ def main():
                                              adjSplit=True, ret=False, periodAdjust='ACTUAL')
         writeOutputFileWhenReRun(DAILY_FILE_NAME, blmIndexes, dailyprices)
     else:
-        input_file = pd.read_csv(args.input)
+        input_file_name = os.path.join(args.inputdir, 'US_IDX_IMP_M_STATIC.csv')
+        input_file = pd.read_csv(input_file_name)
         indxForQuery = input_file.tick_idx.unique().tolist()
+
 
         if len(indxForQuery) > 0:
             # Get Monthly Data

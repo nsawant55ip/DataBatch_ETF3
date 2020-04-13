@@ -612,29 +612,29 @@ bbgEtfIntraDay:
 #    LocalizeOutDest: S:\quant\qsf_etf\data\dpricing\dpricing_changes_idx.csv
 
 
-#BbgIndices:
-#    DisplayName: Download Index data from bloomberg
-#    method: Python
-#    EarliestStart: 01:10:00
-#    MaxTime: 00:10:00
-#    BatchSection: MainBatch
-#    query: C:\DataBatch_ETF_NewProject\Code\bbgIndices.py
-#    output:
-#    - C:\DataBatch_ETF_NewProject\Output\US_IDX_IMP_M_update.csv
-#    - C:\DataBatch_ETF_NewProject\Output\dpricing_changes_idx.csv
-#    parameter:
-#    formatting: None
-#    wait: no
-#    Archive: None
-#    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
-#    FileToCheck: None
-#    Dependents: world_bank_data
-#    Requires: Make_index_univ,bbgEtfIntraDay
-#    LocalizeIn: query
-#    LocalizeOut: output
-#    LocalizeOutDest:
-#    - S:\quant\qsf_etf\IMPLEMENTATION\US_IDX_IMP_M_update.csv
-#    - S:\quant\qsf_etf\data\dpricing\dpricing_changes_idx.csv
+BbgIndices:
+    DisplayName: Download Index data from bloomberg
+    method: Python
+    EarliestStart: 01:10:00
+    MaxTime: 00:10:00
+    BatchSection: MainBatch
+    query: C:\DataBatch_ETF_NewProject\Code\bbgIndices.py
+    output:
+    - C:\DataBatch_ETF_NewProject\Output\US_IDX_IMP_M_update.csv
+    - C:\DataBatch_ETF_NewProject\Output\dpricing_changes_idx.csv
+    parameter:
+    formatting: None
+    wait: no
+    Archive: None
+    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
+    FileToCheck: None
+    Dependents: world_bank_data
+    Requires: Make_index_univ,bbgEtfIntraDay
+    LocalizeIn: query
+    LocalizeOut: output
+    LocalizeOutDest:
+    - S:\quant\qsf_etf\IMPLEMENTATION\US_IDX_IMP_M_update.csv
+    - S:\quant\qsf_etf\data\dpricing\dpricing_changes_idx.csv
 
 
 world_bank_data:
