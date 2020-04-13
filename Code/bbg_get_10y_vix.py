@@ -65,8 +65,8 @@ def main():
     daily_start_date = (datetime.datetime.now() - datetime.timedelta(days=30))
     args.start = daily_start_date.strftime('%d/%m/%Y') if args.start == '' else args.start
     args.end = (datetime.datetime.now() - datetime.timedelta(days=1)).strftime('%d/%m/%Y') if args.end == '' else args.end
-    startDate = datetime.datetime.strptime(args.start,'%m/%d/%Y')
-    endDate   = datetime.datetime.strptime(args.end,'%m/%d/%Y')
+    startDate = datetime.datetime.strptime(args.start, '%d/%m/%Y')
+    endDate   = datetime.datetime.strptime(args.end, '%d/%m/%Y')
     tickers   = ['TY1 Comdty','TYVIX Index','EUVIX Index','JYVIX Index','BPVIX Index','GVZ Index','OVX Index']
     if len(tickers) == 0:
         print('No tickers specified. Exiting...')
