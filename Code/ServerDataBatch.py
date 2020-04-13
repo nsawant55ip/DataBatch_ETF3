@@ -21,8 +21,7 @@ import configparser
 import subprocess as SP
 import yaml
 
-# PrimaryEmail = ['batch_monitor@55-ip.com']
-TeamEmails = ['nsawant@55-ip.com']
+TeamEmails = ['batch_monitor@55-ip.com']
 BASEpath = os.path.join('C:\\', 'DataBatch_ETF_NewProject')
 FLAGdir = os.path.join(BASEpath, 'Flags')
 LOGdir = os.path.join(BASEpath, 'Logs')
@@ -373,16 +372,16 @@ if True:
     logfile.write('\n ' + DBU.TimeString() + ' ETF Data Batch Script finished.\n')
     logfile.close()
 
-# except:
-#     exceptionType, exceptionValue, exceptionTraceback = sys.exc_info()
-#     logfile.write(('-'*80)+'\n Python error:\n\n')
-#     traceback.print_exception(exceptionType, exceptionValue, exceptionTraceback,limit=None, file=logfile)
-#     logfile.write('\n End of program execution ('+datetime.datetime.now().strftime("%A %m/%d/%Y %H:%M:%S")+').\n'+('-'*80)+'\n')
-#     logfile.close
-#     print('Exception raised.\n')
-#      logfile.flush()
-#     if RunMode == 'TEST':
-#         DBU.SendRobustEmail(TeamEmails,[],os.path.join(LOCALdir,'log.txt'),os.environ.get('COMPUTERNAME','UNKNOWN')+' Server ETF Data Batch Python Error.')
-#     else:
-#         DBU.SendRobustEmail(TeamEmails,[],os.path.join(LOCALdir,'log.txt'),os.environ.get('COMPUTERNAME','UNKNOWN')+' Server ETF Data Batch Python Error.')
+except:
+    exceptionType, exceptionValue, exceptionTraceback = sys.exc_info()
+    logfile.write(('-'*80)+'\n Python error:\n\n')
+    traceback.print_exception(exceptionType, exceptionValue, exceptionTraceback,limit=None, file=logfile)
+    logfile.write('\n End of program execution ('+datetime.datetime.now().strftime("%A %m/%d/%Y %H:%M:%S")+').\n'+('-'*80)+'\n')
+    logfile.close
+    print('Exception raised.\n')
+     logfile.flush()
+    if RunMode == 'TEST':
+        DBU.SendRobustEmail(TeamEmails,[],os.path.join(LOCALdir,'log.txt'),os.environ.get('COMPUTERNAME','UNKNOWN')+' Server ETF Data Batch Python Error.')
+    else:
+        DBU.SendRobustEmail(TeamEmails,[],os.path.join(LOCALdir,'log.txt'),os.environ.get('COMPUTERNAME','UNKNOWN')+' Server ETF Data Batch Python Error.')
 print(DBU.TimeString() + ' Finished.')

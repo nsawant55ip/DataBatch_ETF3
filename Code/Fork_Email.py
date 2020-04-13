@@ -16,14 +16,16 @@ def processOptions():
     # parser.add_option('-R','--Recipients',dest='Recipients',action='append',
     #     help='Use this to add each recipient to the email.',default = [r'batch_monitor@55-ip.com'])
     parser.add_argument('-R', '--Recipients', dest='Recipients', action='append',
-                        help='Use this to add each recipient to the email.', default=[r'nsawant@55-ip.com'])
+                        help='Use this to add each recipient to the email.', default=[r'batch_monitor@55-ip.com'])
     parser.add_argument('-A', '--Attachments', dest='Attachments', action='append', default=[],
                         help='Use this to attach each file to the email.')
     parser.add_argument('-L', '--SubjectLine', dest='Subject', help='Subject line.', default='testing')
     parser.add_argument('-T', '--Text', dest='Text', help='File with text for email.', default='Hello')
     parser.add_argument('-U', '--Username', dest='Username', default=r'abatch@55-ip.com',
                         help='Username. Default is abatch@55-ip')
-    parser.add_argument('-P', '--Password', dest='Password', default=r'Bl!zzard152',
+    # parser.add_argument('-P', '--Password', dest='Password', default=r'Bl!zzard152',
+    #                     help='Password. Default is for abatch@55-ip')
+    parser.add_argument('-P', '--Password', dest='Password', default=r'z9N8{26Akev5mGc',
                         help='Password. Default is for abatch@55-ip')
     parser.add_argument('-S', '--Server', dest='Server', default=r'smtp.office365.com',
                         help='SMTP server. Default is smtp.collaborationhost.net')

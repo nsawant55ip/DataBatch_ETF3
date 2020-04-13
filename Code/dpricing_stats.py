@@ -12,7 +12,7 @@ stat_file = os.path.join(OUTPUTpath, 'dpricing_stats.csv')
 
 def processOptions():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-R', '--recipient', dest='recipient', default='nsawant@55-ip.com', help='Supply this argument to change the default recipient', )
+    parser.add_argument('-R', '--recipient', dest='recipient', default='batch_monitor@55-ip.com', help='Supply this argument to change the default recipient', )
     parser.add_argument('-H', '--header', dest='header', default='CLOSE', help='Supply this argument to change the default header')
     args = parser.parse_args()
     return args
