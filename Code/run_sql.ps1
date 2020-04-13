@@ -17,7 +17,7 @@ Param(
 
 #Connection Strings
 $Database = "qai"
-$Server = "ainmg1-vwsql02"
+$Server = "ainmg1-vwsql01"
 
 
 #Replace the name of the .sql file to read here

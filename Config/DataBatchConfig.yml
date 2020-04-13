@@ -10,10 +10,10 @@ DEFAULT:
     LocalizeOut: None
     LocalizeOutDest: None
 
+
 #---------------------
 # Main Batch Processes
 #---------------------
-
 ETF_Stock:
     DisplayName: Monthly ETF Stock Query
     method: powershell
@@ -34,679 +34,692 @@ ETF_Stock:
     LocalizeOut: output
     LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\US_ETF_IMP_M.csv
 
-#CEF_Stock:
-#    DisplayName: Monthly CEF Stock Query
-#    method: powershell
-#    EarliestStart: 01:10:00
-#    MaxTime: 02:00:00
-#    BatchSection: MainBatch
-#    query: C:\DDataBatch_ETF_NewProject\Inputs\CEF_Universe_STOCK.sql
-#    parameter: None
-#    formatting: None
-#    wait: no
-#    Requires: ETF_Stock
-#    Dependents: None
-#    output: C:\DDataBatch_ETF_NewProject\Output\US_CEF_IMP_M.csv
-#    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
-#    CheckFileSize: yes
-#    FileToCheck: @,CEF_Stock,output
-#    LocalizeIn: query
-#    LocalizeOut: output
-#    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\US_CEF_IMP_M.csv
-#
-#MonthlyETF:
-#    DisplayName: Monthly ETF Query
-#    method: powershell
-#    EarliestStart: 01:10:00
-#    MaxTime: 0:10:00
-#    BatchSection: MainBatch
-#    query: C:\DataBatch_ETF_NewProject\Inputs\etfs.sql
-#    output: C:\DataBatch_ETF_NewProject\Output\etfs.csv
-#    parameter: None
-#    formatting: None
-#    wait: no
-#    Dependents: DailyETF
-#    Requires: CEF_Stock
-#    Archive: output
-#    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
-#    CheckFileSize: yes
-#    FileToCheck: output
-#    LocalizeIn: query
-#    LocalizeOut: output
-#    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\etfs.csv
-#
-#DailyETF:
-#    DisplayName: Daily ETF Query
-#    method: powershell
-#    EarliestStart: 01:10:00
-#    MaxTime: 0:10:00
-#    BatchSection: MainBatch
-#    query: C:\DataBatch_ETF_NewProject\Inputs\etfs_daily_IMP.sql
-#    output: C:\DataBatch_ETF_NewProject\Output\etfs_daily.csv
-#    parameter: None
-#    formatting: None
-#    wait: no
-#    Dependents: Historical_dividends
-#    Requires: MonthlyETF
-#    Archive: output
-#    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
-#    CheckFileSize: yes
-#    FileToCheck: output
-#    LocalizeIn: query
-#    LocalizeOut: output
-#    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\etfs_daily.csv
-#
-#Historical_dividends:
-#    DisplayName: Historical dividends Query
-#    method: powershell
-#    EarliestStart: 01:10:00
-#    MaxTime: 0:30:00
-#    BatchSection: MainBatch
-#    query: C:\DataBatch_ETF_NewProject\Inputs\dividends.sql
-#    output: C:\DataBatch_ETF_NewProject\Output\historical_dividends.csv
-#    parameter:  None
-#    formatting: None
-#    wait: no
-#    Dependents: DpricingUpdateData
-#    Requires: DailyETF
-#    Archive: output
-#    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
-#    CheckFileSize: no
-#    FileToCheck: None
-#    LocalizeIn: query
-#    LocalizeOut: output
-#    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\historical_dividends.csv
-#
-#ADV:
-#    DisplayName: ADV Query
-#    method: powershell
-#    EarliestStart: 01:10:00
-#    MaxTime: 0:10:00
-#    BatchSection: MainBatch
-#    query: C:\DataBatch_ETF_NewProject\Inputs\adv.sql
-#    output: C:\DataBatch_ETF_NewProject\Output\adv.csv
-#    parameter: None
-#    formatting: None
-#    wait: no
-#    Archive: output
-#    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
-#    Dependents: None
-#    Requires: Historical_dividends
-#    FileToCheck: None
-#    LocalizeIn: query
-#    LocalizeOut: output
-#    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\adv.csv
-#
-#
-##------------------------
-## Daily Pricing Processes
-##------------------------
-#
-#DpricingUpdateData:
-#    DisplayName: Daily Pricing Update Range Query
-#    method: powershell
-#    EarliestStart: 01:10:00
-#    MaxTime: 0:10:00
-#    BatchSection: DailyPricing
-#    query: C:\DataBatch_ETF_NewProject\Inputs\dpricing_changes.sql
-#    output: C:\DataBatch_ETF_NewProject\Output\dpricing_changes.csv
-#    parameter: None
-#    formatting : None
-#    Requires: Historical_dividends
-#    Dependents: ETF_yields
-#    Archive: output
-#    ArchiveDir: S:\quant\qsf_etf\data\dpricing\ARCHIVES\
-#    CheckFileSize: yes
-#    FileToCheck: output
-#    LocalizeIn: query
-#    LocalizeOut: output
-#    LocalizeOutDest: S:\quant\qsf_etf\data\dpricing\dpricing_changes.csv
-#
-##----------------
-## Yields
-##----------------
-#ETF_yields:
-#    DisplayName: ETF yields
-#    method: powershell
-#    EarliestStart : 01:30:00
-#    MaxTime: 0:20:00
-#    BatchSection: MainBatch
-#    query: C:\DataBatch_ETF_NewProject\Inputs\yields.sql
-#    output: C:\DataBatch_ETF_NewProject\Output\mqa_yields.csv
-#    parameter: None
-#    formatting: None
-#    Dependents: Backfill_yield
-#    Requires: DpricingUpdateData
-#    Archive: None
-#    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
-#    CheckFileSize: no
-#    FileToCheck: None
-#    LocalizeIn: query
-#    LocalizeOut: output
-#    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\mqa_yields.csv
-#
-#Backfill_yield:
-#    DisplayName: Backfill missing yields data
+
+CEF_Stock:
+    DisplayName: Monthly CEF Stock Query
+    method: powershell
+    EarliestStart: 01:10:00
+    MaxTime: 02:00:00
+    BatchSection: MainBatch
+    query: C:\DataBatch_ETF_NewProject\Inputs\CEF_Universe_STOCK.sql
+    parameter: None
+    formatting: None
+    wait: no
+    Requires: ETF_Stock
+    Dependents: None
+    output: C:\DataBatch_ETF_NewProject\Output\US_CEF_IMP_M.csv
+    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
+    CheckFileSize: yes
+    FileToCheck: output
+    LocalizeIn: query
+    LocalizeOut: output
+    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\US_CEF_IMP_M.csv
+
+
+MonthlyETF:
+    DisplayName: Monthly ETF Query
+    method: powershell
+    EarliestStart: 01:10:00
+    MaxTime: 0:10:00
+    BatchSection: MainBatch
+    query: C:\DataBatch_ETF_NewProject\Inputs\etfs.sql
+    output: C:\DataBatch_ETF_NewProject\Output\etfs.csv
+    parameter: None
+    formatting: None
+    wait: no
+    Dependents: DailyETF
+    Requires: CEF_Stock
+    Archive: output
+    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
+    CheckFileSize: yes
+    FileToCheck: output
+    LocalizeIn: query
+    LocalizeOut: output
+    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\etfs.csv
+
+
+DailyETF:
+    DisplayName: Daily ETF Query
+    method: powershell
+    EarliestStart: 01:10:00
+    MaxTime: 0:10:00
+    BatchSection: MainBatch
+    query: C:\DataBatch_ETF_NewProject\Inputs\etfs_daily_IMP.sql
+    output: C:\DataBatch_ETF_NewProject\Output\etfs_daily.csv
+    parameter: None
+    formatting: None
+    wait: no
+    Dependents: Historical_dividends
+    Requires: MonthlyETF
+    Archive: output
+    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
+    CheckFileSize: yes
+    FileToCheck: output
+    LocalizeIn: query
+    LocalizeOut: output
+    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\etfs_daily.csv
+
+
+Historical_dividends:
+    DisplayName: Historical dividends Query
+    method: powershell
+    EarliestStart: 01:10:00
+    MaxTime: 0:30:00
+    BatchSection: MainBatch
+    query: C:\DataBatch_ETF_NewProject\Inputs\dividends.sql
+    output: C:\DataBatch_ETF_NewProject\Output\historical_dividends.csv
+    parameter:  None
+    formatting: None
+    wait: no
+    Dependents: DpricingUpdateData
+    Requires: DailyETF
+    Archive: output
+    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
+    CheckFileSize: no
+    FileToCheck: None
+    LocalizeIn: query
+    LocalizeOut: output
+    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\historical_dividends.csv
+
+
+ADV:
+    DisplayName: ADV Query
+    method: powershell
+    EarliestStart: 01:10:00
+    MaxTime: 0:10:00
+    BatchSection: MainBatch
+    query: C:\DataBatch_ETF_NewProject\Inputs\adv.sql
+    output: C:\DataBatch_ETF_NewProject\Output\adv.csv
+    parameter: None
+    formatting: None
+    wait: no
+    Archive: output
+    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
+    Dependents: None
+    Requires: Historical_dividends
+    FileToCheck: None
+    LocalizeIn: query
+    LocalizeOut: output
+    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\adv.csv
+
+
+#------------------------
+# Daily Pricing Processes
+#------------------------
+DpricingUpdateData:
+    DisplayName: Daily Pricing Update Range Query
+    method: powershell
+    EarliestStart: 01:10:00
+    MaxTime: 0:10:00
+    BatchSection: DailyPricing
+    query: C:\DataBatch_ETF_NewProject\Inputs\dpricing_changes.sql
+    output: C:\DataBatch_ETF_NewProject\Output\dpricing_changes.csv
+    parameter: None
+    formatting : None
+    Requires: Historical_dividends
+    Dependents: ETF_yields
+    Archive: output
+    ArchiveDir: S:\quant\qsf_etf\data\dpricing\ARCHIVES\
+    CheckFileSize: yes
+    FileToCheck: output
+    LocalizeIn: query
+    LocalizeOut: output
+    LocalizeOutDest: S:\quant\qsf_etf\data\dpricing\dpricing_changes.csv
+
+
+#----------------
+# Yields
+#----------------
+ETF_yields:
+    DisplayName: ETF yields
+    method: powershell
+    EarliestStart : 01:30:00
+    MaxTime: 0:20:00
+    BatchSection: MainBatch
+    query: C:\DataBatch_ETF_NewProject\Inputs\yields.sql
+    output: C:\DataBatch_ETF_NewProject\Output\mqa_yields.csv
+    parameter: None
+    formatting: None
+    Dependents: Backfill_yield
+    Requires: DpricingUpdateData
+    Archive: None
+    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
+    CheckFileSize: no
+    FileToCheck: None
+    LocalizeIn: query
+    LocalizeOut: output
+    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\mqa_yields.csv
+
+
+Backfill_yield:
+    DisplayName: Backfill missing yields data
+    method: Stata
+    EarliestStart: 01:30:00
+    MaxTime: 0:10:00
+    BatchSection: MainBatch
+    query: None
+    dofile: C:\DataBatch_ETF_NewProject\Inputs\backfill_yields.do
+    Arguments: 0
+    formatting: None
+    wait: yes
+    output: C:\DataBatch_ETF_NewProject\Output\yields.csv
+    logfile: C:\DataBatch_ETF_NewProject\Logs\backfill_yields.log
+    Archive: None
+    ArchiveDir: S:\quant\qsf_ETF\IMPLEMENTATION\ARCHIVES\
+    Dependents: None
+    Requires: ETF_yields
+    CheckFileSize: yes
+    FileToCheck: output
+    LocalizeIn: query
+    LocalizeOut: output
+    LocalizeOutDest: S:\quant\qsf_ETF\IMPLEMENTATION\yields.csv
+
+
+#----------------
+# STATA
+#----------------
+Make_index_univ:
+    DisplayName: Create Bloomberg tickers
+    method: Stata
+    EarliestStart: 01:10:00
+    MaxTime: 0:10:00
+    BatchSection: MainBatch
+    query: None
+    dofile: C:\DataBatch_ETF_NewProject\Inputs\make_idx_univ.do
+    Arguments: 0
+    formatting: None
+    wait: yes
+    output: C:\DataBatch_ETF_NewProject\Output\idx_univ.csv
+    logfile: C:\DataBatch_ETF_NewProject\Logs\make_idx_univ.log
+    Archive: None
+    ArchiveDir: S:\quant\qsf_ETF\IMPLEMENTATION\ARCHIVES\
+    Dependents: None
+    Requires: ETF_Stock
+    LocalizeIn: query
+    LocalizeOut: output
+    LocalizeOutDest: S:\quant\qsf_ETF\IMPLEMENTATION\idx_univ.csv
+
+
+#---------------------
+# BBG Data
+#---------------------
+Bbgetfs:
+    DisplayName: Download Other bbg data from bloomberg
+    method: Python
+    EarliestStart: 01:10:00
+    MaxTime: 00:10:00
+    BatchSection: MainBatch
+    query: C:\DataBatch_ETF_NewProject\Code\bbgEtfs.py
+    output:
+    - C:\DataBatch_ETF_NewProject\Output\bbg_etfs_update.csv
+    - C:\DataBatch_ETF_NewProject\Output\bbg_etfs_daily_update.csv
+    parameter:
+    formatting: None
+    wait: no
+    Archive: None
+    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
+    CheckFileSize: yes
+    FileToCheck: output
+    Dependents: backfill_ted
+    Requires: ETF_Stock
+    LocalizeIn: query
+    LocalizeOut: output
+    LocalizeOutDest:
+    - S:\quant\qsf_etf\IMPLEMENTATION\bbg_etfs_update.csv
+    - S:\quant\qsf_etf\IMPLEMENTATION\bbg_etfs_daily_update.csv
+
+
+#backfill_ted:
+#    DisplayName: backfill ted data
 #    method: Stata
-#    EarliestStart: 01:30:00
+#    EarliestStart: 01:10:00
 #    MaxTime: 0:10:00
 #    BatchSection: MainBatch
 #    query: None
-#    dofile: C:\DataBatch_ETF_NewProject\Inputs\backfill_yields.do
+#    dofile: C:\DataBatch_ETF_NewProject\Inputs\backfill_ted.do
 #    Arguments: 0
 #    formatting: None
 #    wait: yes
-#    output: C:\DataBatch_ETF_NewProject\Output\yields.csv
-#    logfile: C:\DataBatch_ETF_NewProject\Logs\backfill_yields.log
-#    Archive: None
-#    ArchiveDir: S:\quant\qsf_ETF\IMPLEMENTATION\ARCHIVES\
-#    Dependents: None
-#    Requires: ETF_yields
-#    CheckFileSize: yes
-#    FileToCheck: output
-#    LocalizeIn: query
-#    LocalizeOut: output
-#    LocalizeOutDest: S:\quant\qsf_ETF\IMPLEMENTATION\yields.csv
-#
-#
-##----------------
-## STATA
-##----------------
-#
-#Make_index_univ:
-#    DisplayName: Create Bloomberg tickers
-#    method: Stata
-#    EarliestStart: 01:10:00
-#    MaxTime: 0:10:00
-#    BatchSection: MainBatch
-#    query: None
-#    dofile: C:\DataBatch_ETF_NewProject\Inputs\make_idx_univ.do
-#    Arguments: 0
-#    formatting: None
-#    wait: yes
-#    output: C:\DataBatch_ETF_NewProject\Output\idx_univ.csv
-#    logfile: C:\DataBatch_ETF_NewProject\Logs\make_idx_univ.log
-#    Archive: None
-#    ArchiveDir: S:\quant\qsf_ETF\IMPLEMENTATION\ARCHIVES\
-#    Dependents: None
-#    Requires: ETF_Stock
-#    LocalizeIn: query
-#    LocalizeOut: output
-#    LocalizeOutDest: S:\quant\qsf_ETF\IMPLEMENTATION\idx_univ.csv
-
-
-##---------------------
-## BBG Data
-##---------------------
-#Bbgetfs:
-#    DisplayName: Download Other bbg data from bloomberg
-#    method: Python
-#    EarliestStart: 01:10:00
-#    MaxTime: 00:10:00
-#    BatchSection: MainBatch
-#    query: C:\DataBatch_ETF_NewProject\Code\bbgEtfs.py
 #    output:
-#    - C:\DataBatch_ETF_NewProject\Output\bbg_etfs_update.csv
-#    - C:\DataBatch_ETF_NewProject\Output\bbg_etfs_daily_update.csv
-#    parameter:
-#    formatting: None
-#    wait: no
+#        - C:\DataBatch_ETF_NewProject\Output\tedrate.csv
+#        - C:\DataBatch_ETF_NewProject\Output\tedrate_daily.csv
+#    logfile: C:\DataBatch_ETF_NewProject\Logs\backfill_ted.log
 #    Archive: None
-#    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
-#    CheckFileSize: yes
-#    FileToCheck: output
-#    Dependents: backfill_ted
-#    #Requires: ETF_Stock
-#    LocalizeIn: query
-#    LocalizeOut: output
-#    LocalizeOutDest:
-#    - S:\quant\qsf_etf\IMPLEMENTATION\bbg_etfs_update.csv
-#    - S:\quant\qsf_etf\IMPLEMENTATION\bbg_etfs_daily_update.csv
-#
-##backfill_ted:
-##    DisplayName: backfill ted data
-##    method: Stata
-##    EarliestStart: 01:10:00
-##    MaxTime: 0:10:00
-##    BatchSection: MainBatch
-##    query: None
-##    dofile: C:\DataBatch_ETF_NewProject\Inputs\backfill_ted.do
-##    Arguments: 0
-##    formatting: None
-##    wait: yes
-##    output:
-##        - C:\DataBatch_ETF_NewProject\Output\tedrate.csv
-##        - C:\DataBatch_ETF_NewProject\Output\tedrate_daily.csv
-##    logfile: C:\DataBatch_ETF_NewProject\Logs\backfill_ted.log
-##    Archive: None
-##    ArchiveDir: S:\quant\qsf_ETF\IMPLEMENTATION\ARCHIVES\
-##    Dependents: Bbg_fx_carry
-##    Requires: Bbgetfs
-##    LocalizeIn: query
-##    LocalizeOut: output
-##    LocalizeOutDest: S:\quant\qsf_ETF\IMPLEMENTATION\tedrate.csv,S:\quant\qsf_ETF\IMPLEMENTATION\tedrate_daily.csv
-#
-#Bbg_fx_carry:
-#    DisplayName: Download FX carry data from bloomberg
-#    method: Python
-#    EarliestStart: 01:10:00
-#    MaxTime: 00:10:00
-#    BatchSection: MainBatch
-#    query: C:\DataBatch_ETF_NewProject\Code\bbg_fx_carry.py
-#    output: C:\DataBatch_ETF_NewProject\Output\fx_etf_carry_update.csv
-#    parameter:
-#    formatting: None
-#    wait: no
-#    Archive: None
-#    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
-#    FileToCheck: None
-#    Dependents: Bbg_fx_carry_daily
+#    ArchiveDir: S:\quant\qsf_ETF\IMPLEMENTATION\ARCHIVES\
+#    Dependents: Bbg_fx_carry
 #    Requires: Bbgetfs
 #    LocalizeIn: query
 #    LocalizeOut: output
-#    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\fx_etf_carry_update.csv
-#
-#
-#Bbg_fx_carry_daily:
-#    DisplayName: Download FX carry daily data from bloomberg
+#    LocalizeOutDest: S:\quant\qsf_ETF\IMPLEMENTATION\tedrate.csv,S:\quant\qsf_ETF\IMPLEMENTATION\tedrate_daily.csv
+
+
+Bbg_fx_carry:
+    DisplayName: Download FX carry data from bloomberg
+    method: Python
+    EarliestStart: 01:10:00
+    MaxTime: 00:10:00
+    BatchSection: MainBatch
+    query: C:\DataBatch_ETF_NewProject\Code\bbg_fx_carry.py
+    output: C:\DataBatch_ETF_NewProject\Output\fx_etf_carry_update.csv
+    parameter:
+    formatting: None
+    wait: no
+    Archive: None
+    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
+    FileToCheck: None
+    Dependents: Bbg_fx_carry_daily
+    Requires: Bbgetfs
+    LocalizeIn: query
+    LocalizeOut: output
+    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\fx_etf_carry_update.csv
+
+
+Bbg_fx_carry_daily:
+    DisplayName: Download FX carry daily data from bloomberg
+    method: Python
+    EarliestStart: 01:10:00
+    MaxTime: 00:10:00
+    BatchSection: MainBatch
+    query: C:\DataBatch_ETF_NewProject\Code\bbg_fx_carry_daily.py
+    output: C:\DataBatch_ETF_NewProject\Output\fx_etf_carry_daily_update.csv
+    parameter:
+    formatting: None
+    wait: no
+    Archive: None
+    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
+    FileToCheck: None
+    Dependents: bbg_get_10y_vix
+    Requires: Bbg_fx_carry
+    LocalizeIn: query
+    LocalizeOut: output
+    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\fx_etf_carry_daily_update.csv
+
+
+Bbg_get_projected_dividends:
+    DisplayName: Download projected dividends data from bloomberg
+    method: Python
+    EarliestStart: 01:10:00
+    MaxTime: 00:10:00
+    BatchSection: MainBatch
+    query: C:\DataBatch_ETF_NewProject\Code\bbg_get_projected_dividends.py
+    output: C:\DataBatch_ETF_NewProject\Output\projected_dividends_update.csv
+    parameter:
+    formatting: None
+    wait: no
+    Archive: None
+    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
+    FileToCheck: None
+    equires: Historical_dividends,Make_index_univ
+    LocalizeIn: query
+    LocalizeOut: output
+    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\projected_dividends_update.csv
+
+
+Bbg_get_mgmt_fees:
+    DisplayName: Download Management fees and Expense ratio data from bloomberg
+    method: Python
+    EarliestStart: 01:10:00
+    MaxTime: 00:10:00
+    BatchSection: MainBatch
+    query: C:\DataBatch_ETF_NewProject\Code\bbgETF_mgmt_fees.py
+    output: C:\DataBatch_ETF_NewProject\Output\ETF_mgmt_fees.csv
+    parameter:
+    formatting: None
+    wait: no
+    Archive: None
+    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
+    FileToCheck: None
+    Dependents: bbg_get_10y_vix
+    Requires: Historical_dividends,Make_index_univ
+    LocalizeIn: query
+    LocalizeOut: output
+    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\ETF_mgmt_fees.csv
+
+
+bbg_get_10y_vix:
+    DisplayName: Download 10 year vix data for TY1 Comdty from bloomberg
+    method: Python
+    EarliestStart: 01:10:00
+    MaxTime: 00:10:00
+    BatchSection: MainBatch
+    query: C:\DataBatch_ETF_NewProject\Code\bbg_get_10y_vix.py
+    output: C:\DataBatch_ETF_NewProject\Output\10_Year_Treasury_and_VIX_update.csv
+    parameter:
+    formatting: None
+    wait: no
+    Archive: None
+    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
+    FileToCheck: None
+    Dependents: bbgSector_fundamentals
+    Requires: Bbg_get_mgmt_fees
+    LocalizeIn: query
+    LocalizeOut: output
+    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\10_Year_Treasury_and_VIX_update.csv
+
+
+#----------------
+# BAML data download
+#----------------
+BAML_yields_OAS:
+    DisplayName: BAML yields
+    method: Python
+    EarliestStart: 01:10:00
+    MaxTime: 00:10:00
+    BatchSection: MainBatch
+    query: C:\DataBatch_ETF_NewProject\Code\BAML_yields_OAS.py
+    output: C:\DataBatch_ETF_NewProject\Output\BAML_yields_OAS.csv
+    parameter:
+    formatting: None
+    wait: no
+    Archive: None
+    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
+    FileToCheck: None
+    Dependents: CPIAUCSL
+    Requires: None
+    LocalizeIn: query
+    LocalizeOut: output
+    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\BAML_yields_OAS.csv
+
+
+CPIAUCSL:
+    DisplayName: CPIAUCSL data
+    method: Python
+    EarliestStart: 01:10:00
+    MaxTime: 00:10:00
+    BatchSection: MainBatch
+    query: C:\DataBatch_ETF_NewProject\Code\CPIAUCSL_data_download.py
+    output: C:\DataBatch_ETF_NewProject\Output\CPIAUCSL.csv
+    parameter:
+    formatting: None
+    wait: no
+    Archive: None
+    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
+    FileToCheck: None
+    Dependents: EAFE_yields
+    Requires: BAML_yields_OAS
+    LocalizeIn: query
+    LocalizeOut: output
+    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\CPIAUCSL.csv
+
+
+EAFE_yields:
+    DisplayName: EAFE yields downlaod
+    method: R
+    EarliestStart: 01:10:00
+    MaxTime: 00:10:00
+    BatchSection: MainBatch
+    Rscript: C:\DataBatch_ETF_NewProject\Code\EAFE_yields_download.R
+    logfile: C:\DataBatch_ETF_NewProject\Logs\EAFE_yields_download.log
+    output: C:\DataBatch_ETF_NewProject\Output\yields_eafe.csv
+    parameter:
+    formatting: None
+    wait: no
+    Archive: None
+    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
+    FileToCheck: None
+    Dependents: BAMLEMCBPITRIV
+    Requires: CPIAUCSL
+    LocalizeIn: query
+    LocalizeOut: output
+    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\yields_eafe.csv
+
+
+BAMLEMCBPITRIV:
+    DisplayName: BAMLEMCBPITRIV data
+    method: Python
+    EarliestStart: 01:10:00
+    MaxTime: 00:10:00
+    BatchSection: MainBatch
+    query: C:\DataBatch_ETF_NewProject\Code\BAMLEMCBPITRIV_data_download.py
+    output: C:\DataBatch_ETF_NewProject\Output\BAMLEMCBPITRIV.csv
+    parameter:
+    formatting: None
+    wait: no
+    Archive: None
+    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
+    FileToCheck: None
+    Dependents: CPI_FX
+    Requires: EAFE_yields
+    LocalizeIn: query
+    LocalizeOut: output
+    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\BAMLEMCBPITRIV.csv
+
+
+CPI_FX:
+    DisplayName: CPI FRED data
+    method: Python
+    EarliestStart: 01:10:00
+    MaxTime: 00:10:00
+    BatchSection: MainBatch
+    query: C:\DataBatch_ETF_NewProject\Code\Fred_CPI_data_download.py
+    output: C:\DataBatch_ETF_NewProject\Output\CPI_fx.csv
+    parameter:
+    formatting: None
+    wait: no
+    Archive: None
+    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
+    FileToCheck: None
+    Dependents: ted_data_fred
+    Requires: BAMLEMCBPITRIV
+    LocalizeIn: query
+    LocalizeOut: output
+    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\CPI_fx.csv
+
+
+ted_data_fred:
+    DisplayName: Fetch the tedrate data from fred website
+    method: Python
+    EarliestStart: 01:20:00
+    MaxTime: 00:10:00
+    BatchSection: MainBatch
+    query: C:\DataBatch_ETF_NewProject\Code\ted_data_fred.py
+    output: C:\DataBatch_ETF_NewProject\Output\ted_data_fred.csv
+    parameter:
+    formatting: None
+    wait: no
+    Archive: None
+    FileToCheck: None
+    Dependents: None
+    Requires: CPI_FX
+    LocalizeIn: None
+    LocalizeOut: output
+    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\ted_data_fred.csv
+
+#----------------
+# FUNDAMENTAL data download
+#----------------
+bbgSector_fundamentals:
+    DisplayName: Download Sector data from bloomberg
+    method: Python
+    EarliestStart: 01:10:00
+    MaxTime: 00:10:00
+    BatchSection: MainBatch
+    query: C:\DataBatch_ETF_NewProject\Code\bbgSector_fundamentals.py
+    output: C:\DataBatch_ETF_NewProject\Output\Sector_fundamentals_update.csv
+    parameter:
+    formatting: None
+    wait: no
+    Archive: None
+    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
+    FileToCheck: None
+    Dependents: bbgCountry_fundamentals
+    Requires: bbg_get_10y_vix,Make_index_univ
+    LocalizeIn: query
+    LocalizeOut: output
+    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\Sector_fundamentals_update.csv
+
+
+bbgCountry_fundamentals:
+    DisplayName: Download Country data from bloomberg
+    method: Python
+    EarliestStart: 01:10:00
+    MaxTime: 00:10:00
+    BatchSection: MainBatch
+    query: C:\DataBatch_ETF_NewProject\Code\bbgCountry_fundamentals.py
+    output: C:\DataBatch_ETF_NewProject\Output\Country_fundamentals_update.csv
+    parameter:
+    formatting: None
+    wait: no
+    Archive: None
+    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
+    FileToCheck: None
+    Dependents: None
+    Requires: bbgSector_fundamentals
+    LocalizeIn: query
+    LocalizeOut: output
+    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\Country_fundamentals_update.csv
+
+
+bbgEtfIntraDay:
+    DisplayName: Download Intra day data from bloomberg
+    method: Python
+    EarliestStart: 01:10:00
+    MaxTime: 00:10:00
+    BatchSection: MainBatch
+    query: C:\DataBatch_ETF_NewProject\Code\bbgEtfIntraDay.py
+    output: C:\DataBatch_ETF_NewProject\Output\etfs_intraday_prc_update.csv
+    parameter:
+    formatting: None
+    wait: no
+    Archive: None
+    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
+    FileToCheck: None
+    Dependents: BbgIndices
+    Requires: bbgCountry_fundamentals
+    LocalizeIn: query
+    LocalizeOut: output
+    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\etfs_intraday_prc_update.csv
+
+
+#bbgIndexDaily:
+#    DisplayName: Download Daily Data On Indexes from Bloom
 #    method: Python
 #    EarliestStart: 01:10:00
 #    MaxTime: 00:10:00
 #    BatchSection: MainBatch
-#    query: C:\DataBatch_ETF_NewProject\Code\bbg_fx_carry_daily.py
-#    output: C:\DataBatch_ETF_NewProject\Output\fx_etf_carry_daily_update.csv
+#    query: C:\DataBatch_ETF_NewProject\Code\bbgIndicesDaily.py
+#    output: C:\DataBatch_ETF_NewProject\Output\dpricing_changes_idx.csv
 #    parameter:
 #    formatting: None
 #    wait: no
 #    Archive: None
-#    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
+#    ArchiveDir: S:\quant\qsf_etf\data\dpricing\ARCHIVES\
 #    FileToCheck: None
-#    Dependents: bbg_get_10y_vix
-#    Requires: Bbg_fx_carry
+#    Dependents: BbgIndices
+#    Requires: bbgEtfIntraDay
 #    LocalizeIn: query
 #    LocalizeOut: output
-#    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\fx_etf_carry_daily_update.csv
-#
-#
-#
-#Bbg_get_projected_dividends:
-#    DisplayName: Download projected dividends data from bloomberg
+#    LocalizeOutDest: S:\quant\qsf_etf\data\dpricing\dpricing_changes_idx.csv
+
+
+#BbgIndices:
+#    DisplayName: Download Index data from bloomberg
 #    method: Python
 #    EarliestStart: 01:10:00
 #    MaxTime: 00:10:00
 #    BatchSection: MainBatch
-#    query: C:\DataBatch_ETF_NewProject\Code\bbg_get_projected_dividends.py
-#    output: C:\DataBatch_ETF_NewProject\Output\projected_dividends_update.csv
-#    parameter:
-#    formatting: None
-#    wait: no
-#    Archive: None
-#    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
-#    FileToCheck: None
-#    #equires: Historical_dividends,Make_index_univ
-#    LocalizeIn: query
-#    LocalizeOut: output
-#    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\projected_dividends_update.csv
-#
-#Bbg_get_mgmt_fees:
-#    DisplayName: Download Management fees and Expense ratio data from bloomberg
-#    method: Python
-#    EarliestStart: 01:10:00
-#    MaxTime: 00:10:00
-#    BatchSection: MainBatch
-#    query: C:\DataBatch_ETF_NewProject\Code\bbgETF_mgmt_fees.py
-#    output: C:\DataBatch_ETF_NewProject\Output\ETF_mgmt_fees.csv
-#    parameter:
-#    formatting: None
-#    wait: no
-#    Archive: None
-#    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
-#    FileToCheck: None
-#    Dependents: bbg_get_10y_vix
-#    #Requires: Historical_dividends,Make_index_univ
-#    LocalizeIn: query
-#    LocalizeOut: output
-#    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\ETF_mgmt_fees.csv
-#
-#bbg_get_10y_vix:
-#    DisplayName: Download 10 year vix data for TY1 Comdty from bloomberg
-#    method: Python
-#    EarliestStart: 01:10:00
-#    MaxTime: 00:10:00
-#    BatchSection: MainBatch
-#    query: C:\DataBatch_ETF_NewProject\Code\bbg_get_10y_vix.py
-#    output: C:\DataBatch_ETF_NewProject\Output\10_Year_Treasury_and_VIX_update.csv
-#    parameter:
-#    formatting: None
-#    wait: no
-#    Archive: None
-#    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
-#    FileToCheck: None
-#    Dependents: bbgSector_fundamentals
-#    Requires: Bbg_get_mgmt_fees
-#    LocalizeIn: query
-#    LocalizeOut: output
-#    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\10_Year_Treasury_and_VIX_update.csv
-#
-#
-##----------------
-## BAML data download
-##----------------
-#BAML_yields_OAS:
-#    DisplayName: BAML yields
-#    method: Python
-#    EarliestStart: 01:10:00
-#    MaxTime: 00:10:00
-#    BatchSection: MainBatch
-#    query: C:\DataBatch_ETF_NewProject\Code\BAML_yields_OAS.py
-#    output: C:\DataBatch_ETF_NewProject\Output\BAML_yields_OAS.csv
-#    parameter:
-#    formatting: None
-#    wait: no
-#    Archive: None
-#    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
-#    FileToCheck: None
-#    Dependents: CPIAUCSL
-#    Requires: None
-#    LocalizeIn: query
-#    LocalizeOut: output
-#    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\BAML_yields_OAS.csv
-#
-#CPIAUCSL:
-#    DisplayName: CPIAUCSL data
-#    method: Python
-#    EarliestStart: 01:10:00
-#    MaxTime: 00:10:00
-#    BatchSection: MainBatch
-#    query: C:\DataBatch_ETF_NewProject\Code\CPIAUCSL_data_download.py
-#    output: C:\DataBatch_ETF_NewProject\Output\CPIAUCSL.csv
-#    parameter:
-#    formatting: None
-#    wait: no
-#    Archive: None
-#    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
-#    FileToCheck: None
-#    Dependents: EAFE_yields
-#    Requires: BAML_yields_OAS
-#    LocalizeIn: query
-#    LocalizeOut: output
-#    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\CPIAUCSL.csv
-#
-#EAFE_yields:
-#    DisplayName: EAFE yields downlaod
-#    method: R
-#    EarliestStart: 01:10:00
-#    MaxTime: 00:10:00
-#    BatchSection: MainBatch
-#    Rscript: C:\DataBatch_ETF_NewProject\Code\EAFE_yields_download.R
-#    logfile: C:\DataBatch_ETF_NewProject\Logs\EAFE_yields_download.log
-#    output: C:\DataBatch_ETF_NewProject\Output\yields_eafe.csv
-#    parameter:
-#    formatting: None
-#    wait: no
-#    Archive: None
-#    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
-#    FileToCheck: None
-#    Dependents: BAMLEMCBPITRIV
-#    Requires: CPIAUCSL
-#    LocalizeIn: query
-#    LocalizeOut: output
-#    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\yields_eafe.csv
-#
-#
-#BAMLEMCBPITRIV:
-#    DisplayName: BAMLEMCBPITRIV data
-#    method: Python
-#    EarliestStart: 01:10:00
-#    MaxTime: 00:10:00
-#    BatchSection: MainBatch
-#    query: C:\DataBatch_ETF_NewProject\Code\BAMLEMCBPITRIV_data_download.py
-#    output: C:\DataBatch_ETF_NewProject\Output\BAMLEMCBPITRIV.csv
-#    parameter:
-#    formatting: None
-#    wait: no
-#    Archive: None
-#    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
-#    FileToCheck: None
-#    Dependents: CPI_FX
-#    Requires: EAFE_yields
-#    LocalizeIn: query
-#    LocalizeOut: output
-#    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\BAMLEMCBPITRIV.csv
-#
-#CPI_FX:
-#    DisplayName: CPI FRED data
-#    method: Python
-#    EarliestStart: 01:10:00
-#    MaxTime: 00:10:00
-#    BatchSection: MainBatch
-#    query: C:\DataBatch_ETF_NewProject\Code\Fred_CPI_data_download.py
-#    output: C:\DataBatch_ETF_NewProject\Output\CPI_fx.csv
-#    parameter:
-#    formatting: None
-#    wait: no
-#    Archive: None
-#    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
-#    FileToCheck: None
-#    Dependents: ted_data_fred
-#    Requires: BAMLEMCBPITRIV
-#    LocalizeIn: query
-#    LocalizeOut: output
-#    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\CPI_fx.csv
-#
-#ted_data_fred:
-#    DisplayName: Fetch the tedrate data from fred website
-#    method: Python
-#    EarliestStart: 01:20:00
-#    MaxTime: 00:10:00
-#    BatchSection: MainBatch
-#    query: C:\DDataBatch_ETF_NewProject\Code\ted_data_fred.py
-#    output: C:\DDataBatch_ETF_NewProject\Output\ted_data_fred.csv
-#    parameter:
-#    formatting: None
-#    wait: no
-#    Archive: None
-#    FileToCheck: None
-#    Dependents: None
-#    Requires: CPI_FX
-#    LocalizeIn: None
-#    LocalizeOut: output
-#    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\ted_data_fred.csv
-#
-##----------------
-## FUNDAMENTAL data download
-##----------------
-#bbgSector_fundamentals:
-#    DisplayName: Download Sector data from bloomberg
-#    method: Python
-#    EarliestStart: 01:10:00
-#    MaxTime: 00:10:00
-#    BatchSection: MainBatch
-#    query: C:\DataBatch_ETF_NewProject\Code\bbgSector_fundamentals.py
-#    output: C:\DataBatch_ETF_NewProject\Output\Sector_fundamentals_update.csv
-#    parameter:
-#    formatting: None
-#    wait: no
-#    Archive: None
-#    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
-#    FileToCheck: None
-#    Dependents: bbgCountry_fundamentals
-#    #Requires: bbg_get_10y_vix,Make_index_univ
-#    LocalizeIn: query
-#    LocalizeOut: output
-#    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\Sector_fundamentals_update.csv
-#
-#bbgCountry_fundamentals:
-#    DisplayName: Download Country data from bloomberg
-#    method: Python
-#    EarliestStart: 01:10:00
-#    MaxTime: 00:10:00
-#    BatchSection: MainBatch
-#    query: C:\DataBatch_ETF_NewProject\Code\bbgCountry_fundamentals.py
-#    output: C:\DataBatch_ETF_NewProject\Output\Country_fundamentals_update.csv
-#    parameter:
-#    formatting: None
-#    wait: no
-#    Archive: None
-#    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
-#    FileToCheck: None
-#    Dependents: None
-#    Requires: bbgSector_fundamentals
-#    LocalizeIn: query
-#    LocalizeOut: output
-#    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\Country_fundamentals_update.csv
-#
-#
-#bbgEtfIntraDay:
-#    DisplayName: Download Intra day data from bloomberg
-#    method: Python
-#    EarliestStart: 01:10:00
-#    MaxTime: 00:10:00
-#    BatchSection: MainBatch
-#    query: C:\DataBatch_ETF_NewProject\Code\bbgEtfIntraDay.py
-#    output: C:\DataBatch_ETF_NewProject\Output\etfs_intraday_prc_update.csv
-#    parameter:
-#    formatting: None
-#    wait: no
-#    Archive: None
-#    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
-#    FileToCheck: None
-#    #Dependents: BbgIndices
-#    Requires: bbgCountry_fundamentals
-#    LocalizeIn: query
-#    LocalizeOut: output
-#    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\etfs_intraday_prc_update.csv
-#
-#
-#
-##bbgIndexDaily:
-##    DisplayName: Download Daily Data On Indexes from Bloom
-##    method: Python
-##    EarliestStart: 01:10:00
-##    MaxTime: 00:10:00
-##    BatchSection: MainBatch
-##    query: C:\DataBatch_ETF_NewProject\Code\bbgIndicesDaily.py
-##    output: C:\DataBatch_ETF_NewProject\Output\dpricing_changes_idx.csv
-##    parameter:
-##    formatting: None
-##    wait: no
-##    Archive: None
-##    ArchiveDir: S:\quant\qsf_etf\data\dpricing\ARCHIVES\
-##    FileToCheck: None
-##    Dependents: BbgIndices
-##    Requires: bbgEtfIntraDay
-##    LocalizeIn: query
-##    LocalizeOut: output
-##    LocalizeOutDest: S:\quant\qsf_etf\data\dpricing\dpricing_changes_idx.csv
-#
-#
-##BbgIndices:
-##    DisplayName: Download Index data from bloomberg
-##    method: Python
-##    EarliestStart: 01:10:00
-##    MaxTime: 00:10:00
-##    BatchSection: MainBatch
-##    query: C:\DataBatch_ETF_NewProject\Code\bbgIndices.py
-##    output:
-##    - C:\DataBatch_ETF_NewProject\Output\US_IDX_IMP_M_update.csv
-##    - C:\DDataBatch_ETF_NewProject\Output\dpricing_changes_idx.csv
-##    parameter:
-##    formatting: None
-##    wait: no
-##    Archive: None
-##    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
-##    FileToCheck: None
-##    Dependents: world_bank_data
-##    #Make_index_univ
-##    Requires: bbgEtfIntraDay
-##    LocalizeIn: query
-##    LocalizeOut: output
-##    LocalizeOutDest:
-##    - S:\quant\qsf_etf\IMPLEMENTATION\US_IDX_IMP_M_update.csv
-##    - S:\quant\qsf_etf\data\dpricing\dpricing_changes_idx.csv
-#
-#
-#world_bank_data:
-#    DisplayName: Download world bank data
-#    method: Python
-#    EarliestStart: 01:10:00
-#    MaxTime: 00:10:00
-#    BatchSection: MainBatch
-#    query: C:\DataBatch_ETF_NewProject\Code\bbgWorldBank.py
-#    output: C:\DataBatch_ETF_NewProject\Output\world_bank_data_update.csv
-#    parameter:
-#    formatting: None
-#    wait: no
-#    Archive: None
-#    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
-#    FileToCheck: None
-#    Dependents: None
-#    #Requires: BbgIndices
-#    LocalizeIn: query
-#    LocalizeOut: output
-#    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\world_bank_data_update.csv
-#
-#
-#Bbg_fxs:
-#    DisplayName: Download fx data from bloomberg
-#    method: Python
-#    EarliestStart: 01:10:00
-#    MaxTime: 00:10:00
-#    BatchSection: MainBatch
-#    query: C:\DataBatch_ETF_NewProject\Code\bbgFx.py
+#    query: C:\DataBatch_ETF_NewProject\Code\bbgIndices.py
 #    output:
-#    - C:\DataBatch_ETF_NewProject\Output\fx_update.csv
-#    - C:\DataBatch_ETF_NewProject\Output\fx_daily_update.csv
+#    - C:\DataBatch_ETF_NewProject\Output\US_IDX_IMP_M_update.csv
+#    - C:\DataBatch_ETF_NewProject\Output\dpricing_changes_idx.csv
 #    parameter:
 #    formatting: None
 #    wait: no
 #    Archive: None
 #    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
 #    FileToCheck: None
-#    Dependents: None
-#    Requires: world_bank_data
+#    Dependents: world_bank_data
+#    Requires: Make_index_univ,bbgEtfIntraDay
 #    LocalizeIn: query
 #    LocalizeOut: output
 #    LocalizeOutDest:
-#    - S:\quant\qsf_etf\IMPLEMENTATION\fx_update.csv
-#    - S:\quant\qsf_etf\IMPLEMENTATION\fx_daily_update.csv
-#
-#
-#dpricing_stats:
-#    DisplayName: Fetch stats from dpricing
-#    method: Python
-#    EarliestStart: 01:30:00
-#    MaxTime: 00:10:00
-#    BatchSection: MainBatch
-#    query: C:\DataBatch_ETF_NewProject\Code\dpricing_stats.py
-#    output: C:\DataBatch_ETF_NewProject\Output\dpricing_stats.csv
-#    parameter: -H "close"
-#    formatting: None
-#    wait: no
-#    Archive: None
-#    FileToCheck: None
-#    Dependents: None
-#    #Requires: DpricingUpdateData
-#    LocalizeIn: None
-#    LocalizeOut: None
-#    LocalizeOutDest: None
-#
-#
-#bbg_mkt_cap:
-#    DisplayName: Fetch Capital Weights
-#    method: Python
-#    EarliestStart: 01:20:00
-#    MaxTime: 00:10:00
-#    BatchSection: MainBatch
-#    query: C:\DataBatch_ETF_NewProject\Code\bbg_mkt_cap.py
-#    output: C:\DataBatch_ETF_NewProject\Output\bbg_mkt_cap.csv
-#    parameter:
-#    formatting: None
-#    wait: no
-#    Archive: None
-#    FileToCheck: None
-#    Dependents: None
-#    Requires: Bbg_fxs
-#    LocalizeIn: None
-#    LocalizeOut: None
-#    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\bbg_mkt_cap.csv
+#    - S:\quant\qsf_etf\IMPLEMENTATION\US_IDX_IMP_M_update.csv
+#    - S:\quant\qsf_etf\data\dpricing\dpricing_changes_idx.csv
+
+
+world_bank_data:
+    DisplayName: Download world bank data
+    method: Python
+    EarliestStart: 01:10:00
+    MaxTime: 00:10:00
+    BatchSection: MainBatch
+    query: C:\DataBatch_ETF_NewProject\Code\bbgWorldBank.py
+    output: C:\DataBatch_ETF_NewProject\Output\world_bank_data_update.csv
+    parameter:
+    formatting: None
+    wait: no
+    Archive: None
+    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
+    FileToCheck: None
+    Dependents: None
+    #Requires: BbgIndices
+    LocalizeIn: query
+    LocalizeOut: output
+    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\world_bank_data_update.csv
+
+
+Bbg_fxs:
+    DisplayName: Download fx data from bloomberg
+    method: Python
+    EarliestStart: 01:10:00
+    MaxTime: 00:10:00
+    BatchSection: MainBatch
+    query: C:\DataBatch_ETF_NewProject\Code\bbgFx.py
+    output:
+    - C:\DataBatch_ETF_NewProject\Output\fx_update.csv
+    - C:\DataBatch_ETF_NewProject\Output\fx_daily_update.csv
+    parameter:
+    formatting: None
+    wait: no
+    Archive: None
+    ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
+    FileToCheck: None
+    Dependents: None
+    Requires: world_bank_data
+    LocalizeIn: query
+    LocalizeOut: output
+    LocalizeOutDest:
+    - S:\quant\qsf_etf\IMPLEMENTATION\fx_update.csv
+    - S:\quant\qsf_etf\IMPLEMENTATION\fx_daily_update.csv
+
+
+dpricing_stats:
+    DisplayName: Fetch stats from dpricing
+    method: Python
+    EarliestStart: 01:30:00
+    MaxTime: 00:10:00
+    BatchSection: MainBatch
+    query: C:\DataBatch_ETF_NewProject\Code\dpricing_stats.py
+    output: C:\DataBatch_ETF_NewProject\Output\dpricing_stats.csv
+    parameter: -H "close"
+    formatting: None
+    wait: no
+    Archive: None
+    FileToCheck: None
+    Dependents: None
+    Requires: DpricingUpdateData
+    LocalizeIn: None
+    LocalizeOut: None
+    LocalizeOutDest: None
+
+
+bbg_mkt_cap:
+    DisplayName: Fetch Capital Weights
+    method: Python
+    EarliestStart: 01:20:00
+    MaxTime: 00:10:00
+    BatchSection: MainBatch
+    query: C:\DataBatch_ETF_NewProject\Code\bbg_mkt_cap.py
+    output: C:\DataBatch_ETF_NewProject\Output\bbg_mkt_cap.csv
+    parameter:
+    formatting: None
+    wait: no
+    Archive: None
+    FileToCheck: None
+    Dependents: None
+    Dependents: None
+    Dependents: None
+    Requires: Bbg_fxs
+    LocalizeIn: None
+    LocalizeOut: None
+    LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\bbg_mkt_cap.csv

@@ -1,5 +1,5 @@
 library(RODBC)
-dbconn<- odbcDriverConnect('driver={SQL Server};server=ainmg1-vwsql02;database=qai;trusted_connection=true')
+dbconn<- odbcDriverConnect('driver={SQL Server};server=ainmg1-vwsql01;database=qai;trusted_connection=true')
 df<-sqlQuery(dbconn,"SELECT DISTINCT S.ID as mqaid, PC.Ticker, S.Sedol, S.ISIN,S.CUSIP,S.NAME
 FROM SECMSTRX S
 	JOIN

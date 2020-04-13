@@ -19,8 +19,8 @@ def processOptions():
 
 
 def get_dpricing_stats(header):
-    # dprices = pd.read_csv(changes_file)
-    dprices = pd.read_csv("C:\DataBatch_ETF_NewProject\dpricing\dpricing_changes.csv")
+    dprices = pd.read_csv(changes_file)
+    #dprices = pd.read_csv("C:\DataBatch_ETF_NewProject\dpricing\dpricing_changes.csv")
     dprices['Date'] = pd.to_datetime(dprices['Date'])
     dprices.set_index(['Date'], inplace=True)
     # sorted_dates = sorted(dprices.Date.unique())[-5:] # index used instead of date due to python2.6 issue
@@ -36,8 +36,8 @@ def get_dpricing_stats(header):
     df6 = df1.merge(df2, on='Date').merge(df3, on='Date').merge(df4, on='Date').merge(df5, on='Date')
     # dprices['Date'] = dprices['Date'].dt.strftime('%m/%d/%Y') # datetime to date python2.6 issue
     # df6.set_index(['Date'], inplace=True)
-    # df6.to_csv(stat_file, index=False, sep=',', encoding='utf-8')
-    df6.to_csv("C:\DataBatch_ETF_NewProject\output\dpricing_stats.csv", index=False, sep=',', encoding='utf-8')
+    df6.to_csv(stat_file, index=False, sep=',', encoding='utf-8')
+    #df6.to_csv("C:\DataBatch_ETF_NewProject\output\dpricing_stats.csv", index=False, sep=',', encoding='utf-8')
     df6_table = df6.to_html(index=False)
     return df6_table
 
@@ -63,15 +63,14 @@ def main():
     recipient = [args.recipient]
     attachment = []
     # attachment = [os.path.join(stat_path,'dpricing_stats.csv')] # not needed
-    if True:
-    # try:
+    try:
         header = args.header
         if header == 'close':
             header = 'CLOSE'
         dpricing_table = get_dpricing_stats(header)
         dpricing_table = dpricing_table.replace('<tr style="text-align: right;">', '<tr>')
-        dtstamp = datetime.datetime.fromtimestamp(os.path.getctime("C:\DataBatch_ETF_NewProject\dpricing\dpricing_changes.csv")).strftime('%Y-%m-%d %H:%M:%S')
-        # dtstamp = datetime.datetime.fromtimestamp(os.path.getctime(changes_file)).strftime('%Y-%m-%d %H:%M:%S')
+        #dtstamp = datetime.datetime.fromtimestamp(os.path.getctime("C:\DataBatch_ETF_NewProject\dpricing\dpricing_changes.csv")).strftime('%Y-%m-%d %H:%M:%S')
+        dtstamp = datetime.datetime.fromtimestamp(os.path.getctime(changes_file)).strftime('%Y-%m-%d %H:%M:%S')
         html_message = """\
                         <p>Please find the dpricing stats for column %s <br/></p>
                         <p>Source: %s <br/></p>
@@ -80,9 +79,9 @@ def main():
         content = get_html_start() + html_message + dpricing_table + get_html_end()
 
         DBU.SendRobustEmail(recipient, attachment, content, os.environ.get('COMPUTERNAME', 'UNKNOWN') + ' ETF Dpricing Stats')
-    # except Exception as e:
-    #     error_message = "The ETF dpricing stat execution stopped with following error: "+str(e)
-    #     DBU.SendRobustEmail(recipient, attachment, error_message, os.environ.get('COMPUTERNAME', 'UNKNOWN') + ' ETF Dpricing Stats Error!')
+    except Exception as e:
+        error_message = "The ETF dpricing stat execution stopped with following error: "+str(e)
+        DBU.SendRobustEmail(recipient, attachment, error_message, os.environ.get('COMPUTERNAME', 'UNKNOWN') + ' ETF Dpricing Stats Error!')
 
 
 if __name__ == "__main__":
