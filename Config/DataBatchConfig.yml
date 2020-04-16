@@ -652,7 +652,7 @@ world_bank_data:
     ArchiveDir: S:\quant\qsf_etf\IMPLEMENTATION\ARCHIVES\
     FileToCheck: None
     Dependents: None
-    #Requires: BbgIndices
+    Requires: BbgIndices
     LocalizeIn: query
     LocalizeOut: output
     LocalizeOutDest: S:\quant\qsf_etf\IMPLEMENTATION\world_bank_data_update.csv
@@ -716,8 +716,6 @@ bbg_mkt_cap:
     wait: no
     Archive: None
     FileToCheck: None
-    Dependents: None
-    Dependents: None
     Dependents: None
     Requires: Bbg_fxs
     LocalizeIn: None

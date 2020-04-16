@@ -296,11 +296,11 @@ def main():
                     logfile.write('   ' + reasons + '\n')
                 EmailSubject = ' Failed ETF Data Batch Log'
 
-                # Write out the timings.
+        # Write out the timings.
         TimingsFile = open(os.path.join(LOCALdir, 'Timings.csv'), 'w')
         TimingsFile.write('Process,Start Time, End Time, Duration, Attempts\n')
 
-        for Process in config.keys() :
+        for Process in config.keys():
             if Process != 'DEFAULT':
                 if config[Process].get('AttemptNumber'):
                     attempt_number = config[Process].get('AttemptNumber')
@@ -318,7 +318,6 @@ def main():
                             [os.path.join(LOCALdir, 'Timings.csv')], # Attachments
                             os.path.join(LOCALdir, 'log.txt'), # text
                             os.environ.get('COMPUTERNAME', 'UNKNOWN') + EmailSubject) # Subject
-
 
         with open(os.path.join(LOCALdir, 'EndConfig.yml'), 'w') as file:
             end_config = yaml.dump(config, file)
