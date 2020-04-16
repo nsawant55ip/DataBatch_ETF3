@@ -253,7 +253,7 @@ Bbgetfs:
     output:
     - C:\DataBatch_ETF_NewProject\Output\bbg_etfs_update.csv
     - C:\DataBatch_ETF_NewProject\Output\bbg_etfs_daily_update.csv
-    parameter:
+    parameter: None
     formatting: None
     wait: no
     Archive: None
@@ -301,7 +301,7 @@ Bbg_fx_carry:
     BatchSection: MainBatch
     query: C:\DataBatch_ETF_NewProject\Code\bbg_fx_carry.py
     output: C:\DataBatch_ETF_NewProject\Output\fx_etf_carry_update.csv
-    parameter:
+    parameter: None
     formatting: None
     wait: no
     Archive: None
@@ -322,7 +322,7 @@ Bbg_fx_carry_daily:
     BatchSection: MainBatch
     query: C:\DataBatch_ETF_NewProject\Code\bbg_fx_carry_daily.py
     output: C:\DataBatch_ETF_NewProject\Output\fx_etf_carry_daily_update.csv
-    parameter:
+    parameter: None
     formatting: None
     wait: no
     Archive: None
@@ -343,7 +343,7 @@ Bbg_get_projected_dividends:
     BatchSection: MainBatch
     query: C:\DataBatch_ETF_NewProject\Code\bbg_get_projected_dividends.py
     output: C:\DataBatch_ETF_NewProject\Output\projected_dividends_update.csv
-    parameter:
+    parameter: None
     formatting: None
     wait: no
     Archive: None
@@ -363,7 +363,7 @@ Bbg_get_mgmt_fees:
     BatchSection: MainBatch
     query: C:\DataBatch_ETF_NewProject\Code\bbgETF_mgmt_fees.py
     output: C:\DataBatch_ETF_NewProject\Output\ETF_mgmt_fees.csv
-    parameter:
+    parameter: None
     formatting: None
     wait: no
     Archive: None
@@ -384,7 +384,7 @@ bbg_get_10y_vix:
     BatchSection: MainBatch
     query: C:\DataBatch_ETF_NewProject\Code\bbg_get_10y_vix.py
     output: C:\DataBatch_ETF_NewProject\Output\10_Year_Treasury_and_VIX_update.csv
-    parameter:
+    parameter: None
     formatting: None
     wait: no
     Archive: None
@@ -408,7 +408,7 @@ BAML_yields_OAS:
     BatchSection: MainBatch
     query: C:\DataBatch_ETF_NewProject\Code\BAML_yields_OAS.py
     output: C:\DataBatch_ETF_NewProject\Output\BAML_yields_OAS.csv
-    parameter:
+    parameter: None
     formatting: None
     wait: no
     Archive: None
@@ -429,7 +429,7 @@ CPIAUCSL:
     BatchSection: MainBatch
     query: C:\DataBatch_ETF_NewProject\Code\CPIAUCSL_data_download.py
     output: C:\DataBatch_ETF_NewProject\Output\CPIAUCSL.csv
-    parameter:
+    parameter: None
     formatting: None
     wait: no
     Archive: None
@@ -451,7 +451,7 @@ EAFE_yields:
     Rscript: C:\DataBatch_ETF_NewProject\Code\EAFE_yields_download.R
     logfile: C:\DataBatch_ETF_NewProject\Logs\EAFE_yields_download.log
     output: C:\DataBatch_ETF_NewProject\Output\yields_eafe.csv
-    parameter:
+    parameter: None
     formatting: None
     wait: no
     Archive: None
@@ -472,7 +472,7 @@ BAMLEMCBPITRIV:
     BatchSection: MainBatch
     query: C:\DataBatch_ETF_NewProject\Code\BAMLEMCBPITRIV_data_download.py
     output: C:\DataBatch_ETF_NewProject\Output\BAMLEMCBPITRIV.csv
-    parameter:
+    parameter: None
     formatting: None
     wait: no
     Archive: None
@@ -493,7 +493,7 @@ CPI_FX:
     BatchSection: MainBatch
     query: C:\DataBatch_ETF_NewProject\Code\Fred_CPI_data_download.py
     output: C:\DataBatch_ETF_NewProject\Output\CPI_fx.csv
-    parameter:
+    parameter: None
     formatting: None
     wait: no
     Archive: None
@@ -514,7 +514,7 @@ ted_data_fred:
     BatchSection: MainBatch
     query: C:\DataBatch_ETF_NewProject\Code\ted_data_fred.py
     output: C:\DataBatch_ETF_NewProject\Output\ted_data_fred.csv
-    parameter:
+    parameter: None
     formatting: None
     wait: no
     Archive: None
@@ -536,7 +536,7 @@ bbgSector_fundamentals:
     BatchSection: MainBatch
     query: C:\DataBatch_ETF_NewProject\Code\bbgSector_fundamentals.py
     output: C:\DataBatch_ETF_NewProject\Output\Sector_fundamentals_update.csv
-    parameter:
+    parameter: None
     formatting: None
     wait: no
     Archive: None
@@ -557,7 +557,7 @@ bbgCountry_fundamentals:
     BatchSection: MainBatch
     query: C:\DataBatch_ETF_NewProject\Code\bbgCountry_fundamentals.py
     output: C:\DataBatch_ETF_NewProject\Output\Country_fundamentals_update.csv
-    parameter:
+    parameter: NOne
     formatting: None
     wait: no
     Archive: None
@@ -578,7 +578,7 @@ bbgEtfIntraDay:
     BatchSection: MainBatch
     query: C:\DataBatch_ETF_NewProject\Code\bbgEtfIntraDay.py
     output: C:\DataBatch_ETF_NewProject\Output\etfs_intraday_prc_update.csv
-    parameter:
+    parameter: None
     formatting: None
     wait: no
     Archive: None
@@ -599,7 +599,7 @@ bbgEtfIntraDay:
 #    BatchSection: MainBatch
 #    query: C:\DataBatch_ETF_NewProject\Code\bbgIndicesDaily.py
 #    output: C:\DataBatch_ETF_NewProject\Output\dpricing_changes_idx.csv
-#    parameter:
+#    parameter: None
 #    formatting: None
 #    wait: no
 #    Archive: None
@@ -622,7 +622,7 @@ BbgIndices:
     output:
     - C:\DataBatch_ETF_NewProject\Output\US_IDX_IMP_M_update.csv
     - C:\DataBatch_ETF_NewProject\Output\dpricing_changes_idx.csv
-    parameter:
+    parameter: None
     formatting: None
     wait: no
     Archive: None
@@ -645,7 +645,7 @@ world_bank_data:
     BatchSection: MainBatch
     query: C:\DataBatch_ETF_NewProject\Code\bbgWorldBank.py
     output: C:\DataBatch_ETF_NewProject\Output\world_bank_data_update.csv
-    parameter:
+    parameter: None
     formatting: None
     wait: no
     Archive: None
@@ -668,7 +668,7 @@ Bbg_fxs:
     output:
     - C:\DataBatch_ETF_NewProject\Output\fx_update.csv
     - C:\DataBatch_ETF_NewProject\Output\fx_daily_update.csv
-    parameter:
+    parameter: None
     formatting: None
     wait: no
     Archive: None
@@ -711,7 +711,7 @@ bbg_mkt_cap:
     BatchSection: MainBatch
     query: C:\DataBatch_ETF_NewProject\Code\bbg_mkt_cap.py
     output: C:\DataBatch_ETF_NewProject\Output\bbg_mkt_cap.csv
-    parameter:
+    parameter: None
     formatting: None
     wait: no
     Archive: None

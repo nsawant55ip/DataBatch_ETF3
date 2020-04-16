@@ -7,10 +7,12 @@ from dateutil.relativedelta import relativedelta
 import argparse
 import sys
 import bbgClient
+import ServerDataBatch as SDB
 
 def processOptions():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-O','--outDir',   dest='outDir', default="C:\DataBatch_ETF_NewProject\Output", help='Output Directory')
+    parser.add_argument('-B', '--basedir', dest='basedir', default=SDB.BASEpath, help='Base Directory')
+    parser.add_argument('-O', '--outdir', dest='outdir', default="Output", help='Output Directory')
     #parser.add_argument('-S', '--start',   dest='start', default = '12/29/1989', help='Start date in dd/mm/yyyy format')
     parser.add_argument('-S', '--start',   dest='start', default = '', help='Start date in dd/mm/yyyy format')
     parser.add_argument('-E', '--end',     dest='end',   default = '', help='End date in dd/mm/yyyy format')
@@ -71,9 +73,11 @@ def main():
     if len(tickers) == 0:
         print('No tickers specified. Exiting...')
         sys.exit(1)
-
     daily  = bbgClient.remoteBbgLatestPriceQuery('Etf monthly query',tickers, startDate,endDate, period='DAILY', ret=True,  periodAdjust='CALENDAR')
-    saveOutputFile(daily, args.outDir, fileName='10_Year_Treasury_and_VIX_update.csv')
+    output_path = os.path.join(args.basedir, args.outdir)
+    if not os.path.exists(output_path):
+        os.mkdir(output_path)
+    saveOutputFile(daily, output_path, fileName='10_Year_Treasury_and_VIX_update.csv')
 
     #print('INFO: Finished')
 

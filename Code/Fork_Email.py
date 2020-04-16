@@ -13,10 +13,8 @@ import re, sys, smtplib, os
 def processOptions():
     # Process any inputs from the command line.
     parser = argparse.ArgumentParser()
-    # parser.add_option('-R','--Recipients',dest='Recipients',action='append',
-    #     help='Use this to add each recipient to the email.',default = [r'batch_monitor@55-ip.com'])
     parser.add_argument('-R', '--Recipients', dest='Recipients', action='append',
-                        help='Use this to add each recipient to the email.', default=[r'batch_monitor@55-ip.com'])
+                        help='Use this to add each recipient to the email.', default=[r'nsawant@55-ip.com'])
     parser.add_argument('-A', '--Attachments', dest='Attachments', action='append', default=[],
                         help='Use this to attach each file to the email.')
     parser.add_argument('-L', '--SubjectLine', dest='Subject', help='Subject line.', default='testing')
@@ -37,7 +35,6 @@ def processOptions():
 
 def fork_email(recipients, attachments, text, subject):
     try:
-    #if True:
         args = processOptions()
         server = smtplib.SMTP(args.Server, args.Port)
         msg = MIMEMultipart()

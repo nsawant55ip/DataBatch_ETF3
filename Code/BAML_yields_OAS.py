@@ -1,6 +1,7 @@
 import urllib.request, urllib.error, urllib.parse
 import argparse
 import os, csv
+import ServerDataBatch as SDB
 
 link_list = ["https://research.stlouisfed.org/fred2/data/BAMLC0A0CM.txt",
              "https://research.stlouisfed.org/fred2/data/BAMLH0A0HYM2.txt",
@@ -9,8 +10,9 @@ link_list = ["https://research.stlouisfed.org/fred2/data/BAMLC0A0CM.txt",
 
 def processOptions():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-O','--outdir',   dest='outdir',   default="C:\\DataBatch_ETF_NewProject\\Output", help='Output Directory')
-    parser.add_argument('-F','--filename', dest='filename', default="BAML_yields_OAS.csv",     help='Output filename')
+    parser.add_argument('-B', '--basedir', dest='basedir', default=SDB.BASEpath, help='Base Directory')
+    parser.add_argument('-O', '--outdir', dest='outdir', default="Output", help='Output Directory')
+    parser.add_argument('-F', '--filename', dest='filename', default="BAML_yields_OAS.csv", help='Output filename')
     args = parser.parse_args()
     return args
 
@@ -56,7 +58,10 @@ def simpleMergeData(all_dates, dict_list):
 
 def writeTocsv(args, table):
     """Simply write a csv file based on the data we have"""
-    outputfile = os.path.join(args.outdir, args.filename)
+    output_path = os.path.join(args.basedir, args.outdir)
+    if not os.path.exists(output_path):
+        os.mkdir(output_path)
+    outputfile = os.path.join(output_path, args.filename)
     with open(outputfile, 'w', newline='') as op_fh:
         writer = csv.writer(op_fh)
         header = ('date','c0a0','h0a0','eurohyoas','emhyoas')

@@ -12,7 +12,7 @@ stat_file = os.path.join(OUTPUTpath, 'dpricing_stats.csv')
 
 def processOptions():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-R', '--recipient', dest='recipient', default='batch_monitor@55-ip.com', help='Supply this argument to change the default recipient', )
+    parser.add_argument('-R', '--recipient', dest='recipient', default='nsawant@55-ip.com', help='Supply this argument to change the default recipient', )
     parser.add_argument('-H', '--header', dest='header', default='CLOSE', help='Supply this argument to change the default header')
     args = parser.parse_args()
     return args
@@ -63,7 +63,8 @@ def main():
     recipient = [args.recipient]
     attachment = []
     # attachment = [os.path.join(stat_path,'dpricing_stats.csv')] # not needed
-    try:
+    # try:
+    if True:
         header = args.header
         if header == 'close':
             header = 'CLOSE'
@@ -77,11 +78,10 @@ def main():
                         <p>Timestamp: %s <br/></p>
                     """ % (args.header, changes_file, dtstamp)
         content = get_html_start() + html_message + dpricing_table + get_html_end()
-
         DBU.SendRobustEmail(recipient, attachment, content, os.environ.get('COMPUTERNAME', 'UNKNOWN') + ' ETF Dpricing Stats')
-    except Exception as e:
-        error_message = "The ETF dpricing stat execution stopped with following error: "+str(e)
-        DBU.SendRobustEmail(recipient, attachment, error_message, os.environ.get('COMPUTERNAME', 'UNKNOWN') + ' ETF Dpricing Stats Error!')
+    # except Exception as e:
+    #     error_message = "The ETF dpricing stat execution stopped with following error: "+str(e)
+    #     DBU.SendRobustEmail(recipient, attachment, error_message, os.environ.get('COMPUTERNAME', 'UNKNOWN') + ' ETF Dpricing Stats Error!')
 
 
 if __name__ == "__main__":

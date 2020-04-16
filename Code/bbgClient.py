@@ -9,7 +9,10 @@ PORT = 9999
 
 def sendAndReceive(data):
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # Create a socket (SOCK_STREAM means a TCP socket)
-    sock.connect((HOST, PORT))  # Connect to server and send data
+    try:
+        sock.connect((HOST, PORT))  # Connect to server and send data
+    except Exception as e:
+        print('Error : %s' % e)
     # sock.send(data + "\n")
     pickle.dump(data, sock.makefile('wb'), 2)
     # print "SENT: %s request" % data['name']

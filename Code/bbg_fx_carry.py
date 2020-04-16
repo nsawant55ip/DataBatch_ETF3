@@ -7,6 +7,8 @@ from dateutil.relativedelta import relativedelta
 import argparse
 import sys
 import bbgClient
+import os, csv
+import ServerDataBatch as SDB
 
 ticker_map = {  "FXE" : "EURUSD",
                 "FXA" : "AUDUSD",
@@ -21,7 +23,8 @@ ticker_map = {  "FXE" : "EURUSD",
               
 def processOptions():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-O','--outDir',   dest='outDir', default="C:\DataBatch_ETF_NewProject\Output", help='Output Directory')
+    parser.add_argument('-B', '--basedir', dest='basedir', default=SDB.BASEpath, help='Base Directory')
+    parser.add_argument('-O', '--outdir', dest='outdir', default="Output", help='Output Directory')
     # parser.add_argument('-S', '--start',   dest='start', default = '01/01/1997', help='Start date in dd/mm/yyyy format')
     parser.add_argument('-S', '--start',   dest='start', default = '', help='Start date in dd/mm/yyyy format')
     parser.add_argument('-E', '--end',     dest='end',   default = '', help='End date in dd/mm/yyyy format')
@@ -86,7 +89,10 @@ def main():
         sys.exit(1)
 
     monthly  = bbgClient.remoteBbgLatestPriceQuery('Etf monthly query',tickers, startDate,endDate, period='MONTHLY', adjSplit=True, ret=True, periodAdjust='CALENDAR')
-    saveOutputFile(monthly, args.outDir, fileName='fx_etf_carry_update.csv')
+    output_path = os.path.join(args.basedir, args.outdir)
+    if not os.path.exists(output_path):
+        os.mkdir(output_path)
+    saveOutputFile(monthly, output_path, fileName='fx_etf_carry_update.csv')
 
     #print('INFO: Finished')
 
